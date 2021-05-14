@@ -10,8 +10,8 @@ def split_and_resize_data(SOURCE, TRAINING, VALIDATION, SPLIT_SIZE):
     #Quantity set
     size = 150, 150
     counter = 0
-    training_quantity = math.floor(len(os.listdir(SOURCE)) * SPLIT_SIZE)
-    validation_quantity = len(os.listdir(SOURCE)) - training_quantity
+    training_quantity = 50 #math.floor(len(os.listdir(SOURCE)) * SPLIT_SIZE)
+    validation_quantity = 10 #len(os.listdir(SOURCE)) - training_quantity
     
     #Random picker
     random_pick = random.sample(os.listdir(SOURCE), len(os.listdir(SOURCE)))
@@ -49,6 +49,22 @@ validation_dir = os.path.join(base_dir, 'Validation')
 class_list = ["Black Nightsade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
 
 dictionary_class_dir = {}
+
+try:
+    folder_list = ['Train', 'Validation']
+    
+    #Directory making
+    #os.mkdir(base_dir)
+    #print("Created directory at" + " " + base_dir)
+    for i in range(len(folder_list)):
+        os.mkdir(base_dir + folder_list[i])
+        print("Created directory at" + " " + base_dir + folder_list[i])
+        for j in range(len(class_list)):
+            os.mkdir(base_dir + folder_list[i] + "/" + class_list[j])
+            print("Created directory at" + " " + base_dir + folder_list[i] + "/" + class_list[j])
+
+except OSError:
+    print("Directory already exist!")
 
 for model_class in class_list:
     # Index 0 is Train directory, index 1 is Validation directory, index 2 is Source directory
