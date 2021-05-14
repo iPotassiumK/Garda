@@ -10,8 +10,8 @@ def split_and_resize_data(SOURCE, TRAINING, VALIDATION, SPLIT_SIZE):
     #Quantity set
     size = 150, 150
     counter = 0
-    training_quantity = 50 #math.floor(len(os.listdir(SOURCE)) * SPLIT_SIZE)
-    validation_quantity = 10 #len(os.listdir(SOURCE)) - training_quantity
+    training_quantity = math.floor(len(os.listdir(SOURCE)) * SPLIT_SIZE)
+    validation_quantity = len(os.listdir(SOURCE)) - training_quantity
     
     #Random picker
     random_pick = random.sample(os.listdir(SOURCE), len(os.listdir(SOURCE)))
@@ -46,12 +46,12 @@ source_dir = "/run/media/potassium/Local-Disk_E/Homework/6th Semester/Bangkit 20
 train_dir = os.path.join(base_dir, 'Train')
 validation_dir = os.path.join(base_dir, 'Validation')
 
-class_list = ["Black Nightsade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
+class_list = ["Black Nightshade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
 
 dictionary_class_dir = {}
 
 try:
-    folder_list = ['Train', 'Validation']
+    folder_list = ['Train', 'Validation', 'Test']
     
     #Directory making
     #os.mkdir(base_dir)
