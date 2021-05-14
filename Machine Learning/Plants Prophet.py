@@ -8,7 +8,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 
-model = keras.models.load_model("Plants.h5")
+model = keras.models.load_model("Plants_test.h5")
 
 #model.summary()
 
@@ -19,7 +19,7 @@ import numpy as np
 size = 150
 
 # Prediction using the same images for training and validating
-class_list = ["Black Nightsade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
+class_list = ["Black Nightshade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
 source_dir = "/run/media/potassium/Local-Disk_E/Homework/6th Semester/Bangkit 2021/Capstone/Dataset/"
 
 random_class = random.choice(class_list)
@@ -37,7 +37,6 @@ im.show()
 
 numpy_prediction = model.predict(input_arr)
 prediction_list = numpy_prediction.tolist()
-prediction = ""
 
 print(random_image_path)
 print(numpy_prediction)
