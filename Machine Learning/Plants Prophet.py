@@ -8,7 +8,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 
-model = keras.models.load_model("Plants_test.h5")
+model = keras.models.load_model("Plants.h5")
 
 #model.summary()
 

@@ -12,7 +12,7 @@ base_dir = "/home/potassium/Documents/Bangkit Capstone 2021/Dataset/"
 train_dir = os.path.join(base_dir, 'Train')
 validation_dir = os.path.join(base_dir, 'Validation')
 
-class_list = ["Black Nightsade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
+class_list = ["Black Nightshade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
 
 dictionary_class_dir = {}
 
