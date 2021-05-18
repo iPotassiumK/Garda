@@ -1,0 +1,34 @@
+Training history
+
+Plants.h5
+
+
+Version 1.*
+Using 8 classes
+class_list = ["Black Nightshade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
+
+v1.1 - 13-05-2021 - Local Computer Linux
+Using Eden library dataset at: https://edenlibrary.ai/datasets
+Training with uneven dataset distribution (e.g. Cabbage 150 items, Tomato 400 items, Grape 800 items with 0.9 split)
+Result: on 25 epoch
+	Loss 0.25 Acc 0.92 - Val_Loss 0.28 Val_Acc 0.90 - Tested with previously used training images only get 3/10 Acc
+
+v1.2 - 14-05-2021 - Local Computer Linux
+Using Eden library dataset
+Training with even dataset distribution (e.g. Each classes has 50 items of Trainining and 10 items of Validating randomly picked)
+Result: on 25 epoch
+	Loss 0.76 Acc 0.73 - Val_Loss 0.78 Val_Acc 0.66
+	Tested with previously used training images get 8/10 Acc
+	Tested with new hand-picked Google Images only get 2/10 Acc
+	
+v1.3 - 16-05-2021 - Local Computer Linux
+Using Eden Library dataset combined with Google Images
+Training with even dataset distribution: from Plants Dataset Resized and Shuffled 2.0.py
+	Training = [250, 25] - Total training images each class : 275
+	Validation = [50, 0] - Total validating images each class : 50
+	Test = [21, 4] - Total test images each class : 25
+
+	*The first value indicates dataset from google images and the second indicates dataset from eden library
+Result: on 100 epoch
+	The first 20 epoch Acc and Val_Acc increased, then Val_Acc stays at a constant of 0.5
+	Loss 0.96 Acc 0.67 - Val_Loss 1.73 Val_Acc 0.51 - Tested with new and never been seen test images only get 3/10 Acc
