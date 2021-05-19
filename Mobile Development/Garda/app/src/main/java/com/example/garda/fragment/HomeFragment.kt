@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
 
     private fun createSlider(string: List<Int>) {
 
-        slider.adapter = SliderAdapter(this, string)
+        slider.adapter = context?.let { SliderAdapter(it, string) }
         indicator.setViewPager(slider)
         val density = resources.displayMetrics.density
         //Set circle indicator radius

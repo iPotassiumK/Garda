@@ -1,15 +1,15 @@
 package com.example.garda
 
+import android.content.Context
 import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
-import com.example.garda.fragment.HomeFragment
 import com.squareup.picasso.Picasso
 
-class SliderAdapter(private val context: HomeFragment, private val stringList: List<Int>) : PagerAdapter() {
+class SliderAdapter(private val context: Context, private val stringList: List<Int>) : PagerAdapter() {
 
     private val TAG = "SliderAdapter"
     private val inflater: LayoutInflater = LayoutInflater.from(context)

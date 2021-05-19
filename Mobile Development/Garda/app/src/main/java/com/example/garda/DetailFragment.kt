@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.garda.R
 
-/**
- * A simple [Fragment] subclass.
- */
 
 class DetailFragment : Fragment() {
 
