@@ -31,4 +31,4 @@ Training with even dataset distribution: from Plants Dataset Resized and Shuffle
 	*The first value indicates dataset from google images and the second indicates dataset from eden library
 Result: on 100 epoch
 	The first 20 epoch Acc and Val_Acc increased, then Val_Acc stays at a constant of 0.5
-	Loss 0.96 Acc 0.67 - Val_Loss 1.73 Val_Acc 0.51 - Tested with new and never been seen test images only get 3/10 Acc
+	Loss 0.48 Acc 0.82 - Val_Loss 2.11 Val_Acc 0.52 - Tested with new and never been seen test images only get 3/10 Acc
