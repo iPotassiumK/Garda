@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
 import tensorflow as tf
 
 print('\u2022 Using TensorFlow Version:', tf.__version__)
-
-import os
 
 base_dir = "/home/potassium/Documents/Bangkit Capstone 2021/Dataset/"
 
@@ -77,7 +78,7 @@ from keras_preprocessing.image import ImageDataGenerator
 
 training_datagen = ImageDataGenerator(
       rescale = 1./255,
-	  rotation_range=40,
+	  #rotation_range=40,
       width_shift_range=0.2,
       height_shift_range=0.2,
       shear_range=0.2,
@@ -87,19 +88,26 @@ training_datagen = ImageDataGenerator(
 
 validation_datagen = ImageDataGenerator(rescale = 1./255)
 
+#Depends on total training images, example 2200 images = 44 x 50 so batch 44 with 50 steps
+batch_size_train = 44
+steps_train = 50
+
+#Depends on total validating images, example 400 images = 50 x 8 so batch 50 with 8 steps
+batch_size_validation = 50
+steps_validation = 8
 
 train_generator = training_datagen.flow_from_directory(
 	train_dir,
 	target_size=(150,150),
 	class_mode='categorical',
-	batch_size=49
+	batch_size= batch_size_train 
 )
 
 validation_generator = validation_datagen.flow_from_directory(
 	validation_dir,
 	target_size=(150,150),
 	class_mode='categorical',
-	batch_size=55
+	batch_size= batch_size_validation
 )
 
 model = tf.keras.models.Sequential([
@@ -126,26 +134,43 @@ model = tf.keras.models.Sequential([
 
 model.summary()
 
-model.compile(loss = 'categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
 
+model.compile(loss = 'categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
-history = model.fit(train_generator, epochs=25, steps_per_epoch=40, validation_data = validation_generator, verbose = 1, validation_steps=4)
+try:
+    history = model.fit(train_generator, epochs=100, steps_per_epoch=steps_train, validation_data = validation_generator, verbose = 1, validation_steps=steps_validation)
+except KeyboardInterrupt:
+    print("")
 
 model.save("Plants.h5")
+print("Output saved!")
 
 #PART 4 Graphing the accuracy and loss
+
 import matplotlib.pyplot as plt
-acc = history.history['accuracy']
-val_acc = history.history['val_accuracy']
-loss = history.history['loss']
-val_loss = history.history['val_loss']
 
-epochs = range(len(acc))
+try:
+    acc = history.history['accuracy']
+    val_acc = history.history['val_accuracy']
+    loss = history.history['loss']
+    val_loss = history.history['val_loss']
 
-plt.plot(epochs, acc, 'r', label='Training accuracy')
-plt.plot(epochs, val_acc, 'b', label='Validation accuracy')
-plt.title('Training and validation accuracy')
-plt.legend(loc=0)
-plt.figure()
+    epochs = range(len(acc))
 
-plt.show()
+    plt.plot(epochs, acc, 'r', label='Training accuracy')
+    plt.plot(epochs, val_acc, 'b', label='Validation accuracy')
+    plt.title('Training and validation accuracy')
+    plt.legend(loc=0)
+    plt.figure()
+
+    plt.plot(epochs, loss, 'r', label='Training loss')
+    plt.plot(epochs, val_loss, 'b', label='Validation loss')
+    plt.title('Training and validation loss')
+    plt.legend(loc=0)
+    plt.figure()
+
+    plt.show()
+    
+except NameError:
+    pass
