@@ -12,6 +12,6 @@
 #*.so
 
 # Image #
-*.jpeg
-*.png
-*.jpg
+#*.jpeg
+#*.png
+#*.jpg
