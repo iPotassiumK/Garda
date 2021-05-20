@@ -76,25 +76,37 @@ import keras_preprocessing
 from keras_preprocessing import image
 from keras_preprocessing.image import ImageDataGenerator
 
+
+class myCallback(tf.keras.callbacks.Callback):
+  def on_epoch_end(self, epoch, logs={}):
+    if(logs.get('val_accuracy')>0.85):
+      print("\nReached 85% validation accuracy so cancelling training!")
+      self.model.stop_training = True
+      
+callbacks = myCallback()
+
 training_datagen = ImageDataGenerator(
       rescale = 1./255,
-	  #rotation_range=40,
+	  rotation_range=90,
       width_shift_range=0.2,
       height_shift_range=0.2,
-      shear_range=0.2,
-      zoom_range=0.2,
+      brightness_range=(0.1, 0.9),
+      shear_range=45.0,
+      zoom_range=[0.5, 1.5],
+      channel_shift_range=150.0,
       horizontal_flip=True,
-      fill_mode='nearest')
+      vertical_flip=True,
+      fill_mode='reflect')
 
 validation_datagen = ImageDataGenerator(rescale = 1./255)
 
 #Depends on total training images, example 2200 images = 44 x 50 so batch 44 with 50 steps
-batch_size_train = 44
-steps_train = 50
+batch_size_train = 59
+steps_train = 12
 
 #Depends on total validating images, example 400 images = 50 x 8 so batch 50 with 8 steps
-batch_size_validation = 50
-steps_validation = 8
+batch_size_validation = 71
+steps_validation = 2
 
 train_generator = training_datagen.flow_from_directory(
 	train_dir,
@@ -129,7 +141,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dropout(0.5),
     # 512 neuron hidden layer
     tf.keras.layers.Dense(512, activation='relu'),
-    tf.keras.layers.Dense(8, activation='softmax')
+    tf.keras.layers.Dense(len(class_list), activation='softmax')
 ])
 
 model.summary()
@@ -139,7 +151,7 @@ optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
 model.compile(loss = 'categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
 try:
-    history = model.fit(train_generator, epochs=100, steps_per_epoch=steps_train, validation_data = validation_generator, verbose = 1, validation_steps=steps_validation)
+    history = model.fit(train_generator, epochs=100, steps_per_epoch=steps_train, validation_data = validation_generator, verbose = 1, validation_steps=steps_validation, callbacks=[callbacks])
 except KeyboardInterrupt:
     print("")
 
