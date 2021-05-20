@@ -49,17 +49,17 @@
             android:layout_marginEnd="30dp"
             android:background="@drawable/slider" />
 
-        <com.viewpagerindicator.CirclePageIndicator
-            android:id="@+id/indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="265dp"
-            android:padding="10dip"
-            app:centered="false"
-            app:fillColor="@color/ic_launcher_background"
-            app:snap="false"
-            app:layout_constraintStart_toStartOf="@+id/slider"
-            app:layout_constraintTop_toTopOf="@+id/slider"/>
+<!--        <com.viewpagerindicator.CirclePageIndicator-->
+<!--            android:id="@+id/indicator"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="265dp"-->
+<!--            android:padding="10dip"-->
+<!--            app:centered="false"-->
+<!--            app:fillColor="@color/ic_launcher_background"-->
+<!--            app:snap="false"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/slider"/>-->
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
