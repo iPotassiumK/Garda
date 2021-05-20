@@ -7,13 +7,13 @@ Version 1.*
 Using 8 classes
 class_list = ["Black Nightshade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
 
-v1.1 - 13-05-2021 - Local Computer Linux
+v1.0 - 13-05-2021 - Local Computer Linux
 Using Eden library dataset at: https://edenlibrary.ai/datasets
 Training with uneven dataset distribution (e.g. Cabbage 150 items, Tomato 400 items, Grape 800 items with 0.9 split)
 Result: on 25 epoch
 	Loss 0.25 Acc 0.92 - Val_Loss 0.28 Val_Acc 0.90 - Tested with previously used training images only get 3/10 Acc
 
-v1.2 - 14-05-2021 - Local Computer Linux
+v1.1 - 14-05-2021 - Local Computer Linux
 Using Eden library dataset
 Training with even dataset distribution (e.g. Each classes has 50 items of Trainining and 10 items of Validating randomly picked)
 Result: on 25 epoch
@@ -21,7 +21,7 @@ Result: on 25 epoch
 	Tested with previously used training images get 8/10 Acc
 	Tested with new hand-picked Google Images only get 2/10 Acc
 	
-v1.3 - 16-05-2021 - Local Computer Linux
+v1.2 - 16-05-2021 - Local Computer Linux
 Using Eden Library dataset combined with Google Images
 Training with even dataset distribution: from Plants Dataset Resized and Shuffled 2.0.py
 	Training = [250, 25] - Total training images each class : 275
@@ -32,3 +32,16 @@ Training with even dataset distribution: from Plants Dataset Resized and Shuffle
 Result: on 100 epoch
 	The first 20 epoch Acc and Val_Acc increased, then Val_Acc stays at a constant of 0.5
 	Loss 0.48 Acc 0.82 - Val_Loss 2.11 Val_Acc 0.52 - Tested with new and never been seen test images only get 3/10 Acc
+
+Version 2.*
+Using various class but with more accuracy
+
+
+v2.0 - 19-05-2021 - Local Computer Linux
+Using only 3 classes: ["Cabbage", "Cucumber", "Grape Vine"] for testing purposes
+Using Filtered Google Images and from dreamstime web image search.
+Training with split size of 0.8 of total images for training, 0.8 of (total - training) for validating, and the rest for test.
+Result: on 100 epoch
+	Loss 0.77 Acc 0.65 - Val_Loss 0.77 Val_Acc 0.69 
+	And tested with test images (never-used before) with 8/10 Acc.
+	Tested with new images downloaded from google also give good results
