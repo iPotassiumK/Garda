@@ -100,7 +100,7 @@
             tools:layout_editor_absoluteX="4dp"
             tools:layout_editor_absoluteY="234dp">
 
-            <androidx.viewpager2.widget.ViewPager2
+            <androidx.viewpager.widget.ViewPager
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </FrameLayout>
