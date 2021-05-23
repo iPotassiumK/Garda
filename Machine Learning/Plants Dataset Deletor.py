@@ -9,7 +9,7 @@ train_dir = os.path.join(base_dir, 'Train')
 validation_dir = os.path.join(base_dir, 'Validation')
 test_dir = os.path.join(base_dir, 'Test')
 
-class_list = ["Broccoli", "Cabbage", "Carrot", "Chilli", "Cucumber", "Grape Vine", "Onion", "Potato", "Spinach", "Tomato"]
+class_list = ["Broccoli", "Cabbage", "Carrot", "Chili", "Cucumber", "Grape Vine", "Onion", "Potato", "Spinach", "Tomato"]
 
 dictionary_class_dir = {}
 

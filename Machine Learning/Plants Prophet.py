@@ -20,7 +20,7 @@ size = 150
 
 # Prediction using different images for training and validating
 
-class_list = ["Broccoli", "Cabbage", "Carrot", "Chilli", "Cucumber", "Grape Vine", "Onion", "Potato", "Spinach", "Tomato"]
+class_list = ["Broccoli", "Cabbage", "Carrot", "Chili", "Cucumber", "Grape Vine", "Onion", "Potato", "Spinach", "Tomato"]
 
 test_dir = "/home/potassium/Documents/Bangkit Capstone 2021/Dataset/Validation/"
 fresh_pick = ""
