@@ -20,9 +20,10 @@ size = 150
 
 # Prediction using different images for training and validating
 
-class_list = ["Black Nightshade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
-test_dir = "/home/potassium/Documents/Bangkit Capstone 2021/Dataset/Test/"
-fresh_pick = "" #directly the source file
+class_list = ["Broccoli", "Cabbage", "Carrot", "Chilli", "Cucumber", "Grape Vine", "Onion", "Potato", "Spinach", "Tomato"]
+
+test_dir = "/home/potassium/Documents/Bangkit Capstone 2021/Dataset/Validation/"
+fresh_pick = ""
 
 random_class = random.choice(class_list)
 random_image = random.choice(os.listdir(os.path.join(test_dir, random_class)))
@@ -52,8 +53,18 @@ im.show()
 numpy_prediction = model.predict(input_arr)
 prediction_list = numpy_prediction.tolist()
 
-#print(numpy_prediction)
+prediction = {}
+
+print(numpy_prediction)
 
 for i in range(len(class_list)):
-    if prediction_list[0][i] == 1:
+    if prediction_list[0][i] >= 0.9:
         print("I think I see a " + class_list[i] + " plants!")
+    elif prediction_list[0][i] > 0:
+        prediction[prediction_list[0][i]] = class_list[i]
+
+#print(prediction.keys())
+try:
+    print("Could it be a " + prediction[max(prediction.keys())] + "?")
+except ValueError:
+    pass

@@ -45,3 +45,24 @@ Result: on 100 epoch
 	Loss 0.77 Acc 0.65 - Val_Loss 0.77 Val_Acc 0.69 
 	And tested with test images (never-used before) with 8/10 Acc.
 	Tested with new images downloaded from google also give good results
+
+v2.1 - 22-05-2021 - Local Computer Linux
+Using 6 classes: ["Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Potato", "Tomato"]
+Using Filtered Google Images and from dreamstime web image search.
+Training with split size of 0.8 of total images for training, 0.8 of (total - training) for validating, and the rest for test.
+Result: on 200 epoch
+	Loss 0.92 Acc 0.63 - Val_Loss 0.91 Val_Acc 0.65 
+	And tested with test images (never-used before) with 7/10 Acc.
+	But Cabbage class is often mistaken as Broccoli,
+	And Tomato class is often mistaken as Potato
+
+v2.2 - 22-05-2021 - Local Computer Linux
+Transfer Learning with previous model: v2.1
+Freeze all layer but the output layer to be re-trained
+Using Filtered Google Images and from dreamstime web image search.
+Training with split size of 0.8 of total images for training, 0.8 of (total - training) for validating, and the rest for test.
+Result: on 50 epoch
+	Loss 0.91 Acc 0.66 - Val_Loss 0.63 Val_Acc 0.77 
+	And tested with test images (never-used before) with 8/10 Acc.
+	Cabbage class now performs better
+	Tomato class stay inaccurate, so the dataset that looks like potato is deleted
