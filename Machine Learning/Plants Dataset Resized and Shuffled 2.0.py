@@ -6,13 +6,13 @@ import shutil
 import math
 from PIL import Image
 
-def split_shuffle_resize_data(SOURCE1, SOURCE2, TRAINING, VALIDATION, TEST, SPLIT_SIZE):
+def split_shuffle_resize_data(SOURCE1, SOURCE2, TRAINING, VALIDATION, TEST):
     #Quantity set
     size = 150, 150
     counter1 = 0
     counter2 = 0
-    training_quantity = [250, 25] #math.floor(len(os.listdir(SOURCE)) * SPLIT_SIZE)
-    validation_quantity = [50, 0] #len(os.listdir(SOURCE)) - training_quantity
+    training_quantity = [250, 25] 
+    validation_quantity = [50, 0]
     test_quantity = [21, 4]
     
     #Random picker
@@ -90,8 +90,6 @@ def split_shuffle_resize_data(SOURCE1, SOURCE2, TRAINING, VALIDATION, TEST, SPLI
 
     print("Copied {} files".format(counter1+counter2))
 
-split_size = .9
-
 base_dir = "/home/potassium/Documents/Bangkit Capstone 2021/Dataset/"
 source_dir = "/run/media/potassium/Local-Disk_E/Homework/6th Semester/Bangkit 2021/Capstone/Dataset/"
 google_dir = os.path.join(source_dir, 'Google Images')
@@ -102,7 +100,7 @@ train_dir = os.path.join(base_dir, 'Train')
 validation_dir = os.path.join(base_dir, 'Validation')
 test_dir = os.path.join(base_dir, 'Test')
 
-class_list = ["Black Nightshade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
+class_list = ["Broccoli", "Cabbage", "Carrot", "Chilli", "Cucumber", "Grape Vine", "Onion", "Potato", "Spinach", "Tomato"]
 
 dictionary_class_dir = {}
 
@@ -130,7 +128,7 @@ for model_class in class_list:
     dictionary_class_dir[model_class].append(os.path.join(test_dir, model_class))
     dictionary_class_dir[model_class].append(os.path.join(google_dir, model_class))
     dictionary_class_dir[model_class].append(os.path.join(eden_dir, model_class))
-    split_shuffle_resize_data(dictionary_class_dir[model_class][3], dictionary_class_dir[model_class][4], dictionary_class_dir[model_class][0], dictionary_class_dir[model_class][1], dictionary_class_dir[model_class][2], split_size)
+    split_shuffle_resize_data(dictionary_class_dir[model_class][3], dictionary_class_dir[model_class][4], dictionary_class_dir[model_class][0], dictionary_class_dir[model_class][1], dictionary_class_dir[model_class][2])
 
 #print(dictionary_class_dir["Broccoli"][0])
 #print(dictionary_class_dir["Cabbage"][1])
