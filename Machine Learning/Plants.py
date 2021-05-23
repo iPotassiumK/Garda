@@ -13,7 +13,7 @@ base_dir = "/home/potassium/Documents/Bangkit Capstone 2021/Dataset/"
 train_dir = os.path.join(base_dir, 'Train')
 validation_dir = os.path.join(base_dir, 'Validation')
 
-class_list = ["Black Nightshade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
+class_list = ["Broccoli", "Cabbage", "Carrot", "Chilli", "Cucumber", "Grape Vine", "Onion", "Potato", "Spinach", "Tomato"]
 
 dictionary_class_dir = {}
 
@@ -101,12 +101,12 @@ training_datagen = ImageDataGenerator(
 validation_datagen = ImageDataGenerator(rescale = 1./255)
 
 #Depends on total training images, example 2200 images = 44 x 50 so batch 44 with 50 steps
-batch_size_train = 59
-steps_train = 12
+batch_size_train = 50
+steps_train = 29
 
 #Depends on total validating images, example 400 images = 50 x 8 so batch 50 with 8 steps
-batch_size_validation = 71
-steps_validation = 2
+batch_size_validation = 48
+steps_validation = 6
 
 train_generator = training_datagen.flow_from_directory(
 	train_dir,
@@ -146,12 +146,12 @@ model = tf.keras.models.Sequential([
 
 model.summary()
 
-optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
+optimizer = tf.keras.optimizers.Adam(learning_rate=0.0001)
 
 model.compile(loss = 'categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
 try:
-    history = model.fit(train_generator, epochs=100, steps_per_epoch=steps_train, validation_data = validation_generator, verbose = 1, validation_steps=steps_validation, callbacks=[callbacks])
+    history = model.fit(train_generator, epochs=200, steps_per_epoch=steps_train, validation_data = validation_generator, verbose = 1, validation_steps=steps_validation, callbacks=[callbacks])
 except KeyboardInterrupt:
     print("")
 
