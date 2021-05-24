@@ -66,3 +66,28 @@ Result: on 50 epoch
 	And tested with test images (never-used before) with 8/10 Acc.
 	Cabbage class now performs better
 	Tomato class stay inaccurate, so the dataset that looks like potato is deleted
+
+Version 3.*
+Using 10 classes
+class_list = ["Broccoli", "Cabbage", "Carrot", "Chili", "Cucumber", "Grape Vine", "Onion", "Potato", "Spinach", "Tomato"]
+Final model and version
+Intended to be used on App
+
+v3.0 - 23-05-2021 - Local Computer Linux
+Using Filtered Google Images and from dreamstime web image search.
+Training with split size of 0.8 of total images for training, 0.8 of (total - training) for validating, and the rest for test.
+Result: on 250 epoch
+	Loss 1.43 Acc 0.51 - Val_Loss 1.22 Val_Acc 0.57 
+	And tested with test images (never-used before) with 6/10 Acc.
+	A lot of mistake due to Spinach only showing leaves
+
+v3.1 - 23-05-2021 - Local Computer Linux
+Transfer Learning with previous model: v3.0
+Using all layers to be trained again because freezing doesn't change much
+Using Filtered Google Images and from dreamstime web image search.
+Training with split size of 0.8 of total images for training, 0.8 of (total - training) for validating, and the rest for test.
+Result: on 100 epoch
+	Loss 1.40 Acc 0.49 - Val_Loss 1.03 Val_Acc 0.64 
+	And tested with test images (never-used before) with 6/10 Acc.
+	Still didn't do much change or maybe even worse
+	Converted to TFlite format for experiment with the cloud
