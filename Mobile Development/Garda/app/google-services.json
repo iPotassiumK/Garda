@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "201193564646",
+    "project_id": "camera-upload-example",
+    "storage_bucket": "camera-upload-example.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201193564646:android:51bbf77774d5673e8ace27",
+        "android_client_info": {
+          "package_name": "com.garda.cameraexperiment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "201193564646-vvo32u24q809o49uk6h6dnu4s873pf3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.garda.cameraexperiment",
+            "certificate_hash": "0cef2bf76b1e002c7c4661ab5cc8b472daa5aef3"
+          }
+        },
+        {
+          "client_id": "201193564646-i65klvgt1hiun2vgv5v0f90brdk5jv3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPg_4EOQcHU7Pj9e2MtUHTZDnMQ9WeGnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "201193564646-i65klvgt1hiun2vgv5v0f90brdk5jv3g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
