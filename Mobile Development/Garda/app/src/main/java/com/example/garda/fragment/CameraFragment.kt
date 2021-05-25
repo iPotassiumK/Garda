@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.garda.R
+import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.fragment_camera.*
 
 class CameraFragment : Fragment() {
