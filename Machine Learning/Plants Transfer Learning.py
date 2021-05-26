@@ -102,7 +102,7 @@ try:
 except KeyboardInterrupt:
     print("")
 
-model.save("Plants Transfer Learning 2.h5")
+model.save("Plants Transfer Learning.h5")
 print("Output saved!")
 
 #PART 4 Graphing the accuracy and loss
