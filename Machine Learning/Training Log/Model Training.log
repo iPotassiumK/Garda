@@ -7,13 +7,13 @@ Version 1.*
 Using 8 classes
 class_list = ["Black Nightshade", "Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Pepper", "Potato", "Tomato"]
 
-v1.0 - 13-05-2021 - Local Computer Linux
+v1.0 - 13-05-2021 - Local Computer Linux - Training time: ~40M
 Using Eden library dataset at: https://edenlibrary.ai/datasets
 Training with uneven dataset distribution (e.g. Cabbage 150 items, Tomato 400 items, Grape 800 items with 0.9 split)
 Result: on 25 epoch
 	Loss 0.25 Acc 0.92 - Val_Loss 0.28 Val_Acc 0.90 - Tested with previously used training images only get 3/10 Acc
 
-v1.1 - 14-05-2021 - Local Computer Linux
+v1.1 - 14-05-2021 - Local Computer Linux - Training time: ~50M
 Using Eden library dataset
 Training with even dataset distribution (e.g. Each classes has 50 items of Trainining and 10 items of Validating randomly picked)
 Result: on 25 epoch
@@ -21,7 +21,7 @@ Result: on 25 epoch
 	Tested with previously used training images get 8/10 Acc
 	Tested with new hand-picked Google Images only get 2/10 Acc
 	
-v1.2 - 16-05-2021 - Local Computer Linux
+v1.2 - 16-05-2021 - Local Computer Linux - Training time: ~1H
 Using Eden Library dataset combined with Google Images
 Training with even dataset distribution: from Plants Dataset Resized and Shuffled 2.0.py
 	Training = [250, 25] - Total training images each class : 275
@@ -37,7 +37,7 @@ Version 2.*
 Using various class but with more accuracy
 
 
-v2.0 - 19-05-2021 - Local Computer Linux
+v2.0 - 19-05-2021 - Local Computer Linux - Training time: ~3H
 Using only 3 classes: ["Cabbage", "Cucumber", "Grape Vine"] for testing purposes
 Using Filtered Google Images and from dreamstime web image search.
 Training with split size of 0.8 of total images for training, 0.8 of (total - training) for validating, and the rest for test.
@@ -46,7 +46,7 @@ Result: on 100 epoch
 	And tested with test images (never-used before) with 8/10 Acc.
 	Tested with new images downloaded from google also give good results
 
-v2.1 - 22-05-2021 - Local Computer Linux
+v2.1 - 22-05-2021 - Local Computer Linux - Training time: ~4H
 Using 6 classes: ["Broccoli", "Cabbage", "Cucumber", "Grape Vine", "Potato", "Tomato"]
 Using Filtered Google Images and from dreamstime web image search.
 Training with split size of 0.8 of total images for training, 0.8 of (total - training) for validating, and the rest for test.
@@ -56,7 +56,7 @@ Result: on 200 epoch
 	But Cabbage class is often mistaken as Broccoli,
 	And Tomato class is often mistaken as Potato
 
-v2.2 - 22-05-2021 - Local Computer Linux
+v2.2 - 22-05-2021 - Local Computer Linux - Training time: ~30M
 Transfer Learning with previous model: v2.1
 Freeze all layer but the output layer to be re-trained
 Using Filtered Google Images and from dreamstime web image search.
@@ -73,7 +73,7 @@ class_list = ["Broccoli", "Cabbage", "Carrot", "Chili", "Cucumber", "Grape Vine"
 Final model and version
 Intended to be used on App
 
-v3.0 - 23-05-2021 - Local Computer Linux
+v3.0 - 23-05-2021 - Local Computer Linux - Training time: ~6H
 Using Filtered Google Images and from dreamstime web image search.
 Training with split size of 0.8 of total images for training, 0.8 of (total - training) for validating, and the rest for test.
 Result: on 250 epoch
@@ -81,7 +81,7 @@ Result: on 250 epoch
 	And tested with test images (never-used before) with 6/10 Acc.
 	A lot of mistake due to Spinach only showing leaves
 
-v3.1 - 23-05-2021 - Local Computer Linux
+v3.1 - 23-05-2021 - Local Computer Linux - Training time: ~3H
 Transfer Learning with previous model: v3.0
 Using all layers to be trained again because freezing doesn't change much
 Using Filtered Google Images and from dreamstime web image search.
@@ -91,3 +91,14 @@ Result: on 100 epoch
 	And tested with test images (never-used before) with 6/10 Acc.
 	Still didn't do much change or maybe even worse
 	Converted to TFlite format for experiment with the cloud
+
+v3.2 - 23-05-2021 - Local Computer Linux - Training time: 18H 37M 44S
+Filtering the Google and Dreamstime Image once more, removing every images showing a wide range and other unclear images.
+Training with split size of 0.8 of total images for training, 0.8 of (total - training) for validating, and the rest for test.
+Added new Keras Convolutional layer with 256 filters and relu activation kernel size (3,3)
+Added new Keras Max Pooling 2D with pool size (2,2)
+Result: on 500 epoch
+	Loss 0.78 Acc 0.73 - Val_Loss 0.81 Val_Acc 0.75
+	And tested with test images (never-used before) 40 times: 30 correct 10 incorrect - 0.75 Test Acc
+	Will be the final and ready-to-use model for the App
+	Converted to TFlite format to be used as the main model
