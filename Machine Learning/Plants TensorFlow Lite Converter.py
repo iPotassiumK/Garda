@@ -7,7 +7,7 @@ import tensorflow as tf
 import pathlib
 
 # Convert the model.
-source_file_name = "Plants Transfer Learning.h5"
+source_file_name = "Plants.h5"
 destination_file_name = "Plants.tflite"
 
 model = tf.keras.models.load_model(source_file_name)
