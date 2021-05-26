@@ -1,4 +1,4 @@
-package com.example.garda.fragment
+package com.example.garda
 
 import android.app.ProgressDialog
 import android.content.Context

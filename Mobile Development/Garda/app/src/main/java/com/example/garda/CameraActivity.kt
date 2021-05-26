@@ -1,26 +1,24 @@
-package com.example.garda.fragment
+package com.example.garda
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.garda.R
 import com.github.dhaval2404.imagepicker.ImagePicker
-import kotlinx.android.synthetic.main.fragment_camera.*
+import kotlinx.android.synthetic.main.activity_camera.*
 
-class CameraFragment : Fragment() {
+class CameraActivity : AppCompatActivity() {
+
     companion object {
         const val REQUEST_FROM_CAMERA = 1001;
         const val REQUEST_FROM_GALLERY = 1002;
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_camera,container, false)
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_camera)
         initUI()
     }
+
     private fun initUI() {
         btnCamera.setOnClickListener {
             captureImageUsingCamera()
@@ -42,7 +40,7 @@ class CameraFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_FROM_CAMERA) {
-            when(requestCode) {
+            when (requestCode) {
                 REQUEST_FROM_CAMERA -> {
                     imgProfile.setImageURI(data!!.data)
                     FirebaseStorageManager().uploadImage(this, data.data!!)
