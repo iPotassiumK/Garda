@@ -95,18 +95,18 @@ training_datagen = ImageDataGenerator(
       zoom_range=[0.5, 1.5],
       channel_shift_range=150.0,
       horizontal_flip=True,
-      vertical_flip=True,
+      #vertical_flip=True,
       fill_mode='reflect')
 
 validation_datagen = ImageDataGenerator(rescale = 1./255)
 
 #Depends on total training images, example 2200 images = 44 x 50 so batch 44 with 50 steps
-batch_size_train = 50
-steps_train = 29
+batch_size_train = 66
+steps_train = 36
 
 #Depends on total validating images, example 400 images = 50 x 8 so batch 50 with 8 steps
-batch_size_validation = 48
-steps_validation = 6
+batch_size_validation = 53
+steps_validation = 9
 
 train_generator = training_datagen.flow_from_directory(
 	train_dir,
@@ -136,9 +136,12 @@ model = tf.keras.models.Sequential([
     # The fourth convolution
     tf.keras.layers.Conv2D(128, (3,3), activation='relu'),
     tf.keras.layers.MaxPooling2D(2,2),
+    # The fifth convolution
+    tf.keras.layers.Conv2D(256, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
     # Flatten the results to feed into a DNN
     tf.keras.layers.Flatten(),
-    tf.keras.layers.Dropout(0.5),
+    tf.keras.layers.Dropout(0.8),
     # 512 neuron hidden layer
     tf.keras.layers.Dense(512, activation='relu'),
     tf.keras.layers.Dense(len(class_list), activation='softmax')
@@ -146,12 +149,12 @@ model = tf.keras.models.Sequential([
 
 model.summary()
 
-optimizer = tf.keras.optimizers.Adam(learning_rate=0.0001)
+optimizer = tf.keras.optimizers.Adam(learning_rate=0.0005)
 
 model.compile(loss = 'categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
 try:
-    history = model.fit(train_generator, epochs=200, steps_per_epoch=steps_train, validation_data = validation_generator, verbose = 1, validation_steps=steps_validation, callbacks=[callbacks])
+    history = model.fit(train_generator, epochs=500, steps_per_epoch=steps_train, validation_data = validation_generator, verbose = 1, validation_steps=steps_validation, callbacks=[callbacks])
 except KeyboardInterrupt:
     print("")
 
