@@ -66,5 +66,5 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-storage:19.2.2'
 
-    implementation 'com.github.dhaval2404:imagepicker:2.0'
+    implementation 'com.github.dhaval2404:imagepicker:1.7.4'
 }
