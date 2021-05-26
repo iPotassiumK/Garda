@@ -22,7 +22,7 @@ size = 150
 
 class_list = ["Broccoli", "Cabbage", "Carrot", "Chili", "Cucumber", "Grape Vine", "Onion", "Potato", "Spinach", "Tomato"]
 
-test_dir = "/home/potassium/Documents/Bangkit Capstone 2021/Dataset/Validation/"
+test_dir = "/home/potassium/Documents/Bangkit Capstone 2021/Dataset/Test/"
 fresh_pick = ""
 
 random_class = random.choice(class_list)
