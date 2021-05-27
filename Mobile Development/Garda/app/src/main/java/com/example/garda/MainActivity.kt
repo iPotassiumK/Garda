@@ -16,6 +16,7 @@ import java.util.*
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var ic_camera : ImageButton
+    private lateinit var ic_search :ImageButton
     private var currentPage = 0
     private var numPages = 0
 
@@ -29,6 +30,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         ic_camera = findViewById(R.id.ic_camera)
         ic_camera.setOnClickListener(this)
+
+        ic_search = findViewById(R.id.ic_search)
+        ic_search.setOnClickListener(this)
 
         val lists: List<String> = listOf(
             "https://i.pinimg.com/originals/70/96/78/709678cc727b37324815304ba0a4d340.jpg",
@@ -52,6 +56,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.ic_camera -> run {
                 val mIntent = Intent(this, CameraActivity::class.java)
+                startActivity(mIntent)
+            }
+            R.id.ic_search -> run {
+                val mIntent = Intent(this, SearchActivity::class.java)
                 startActivity(mIntent)
             }
         }

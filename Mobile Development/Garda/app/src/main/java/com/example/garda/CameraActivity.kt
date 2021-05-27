@@ -3,10 +3,15 @@ package com.example.garda
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageButton
 import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.activity_camera.*
 
-class CameraActivity : AppCompatActivity() {
+class CameraActivity : AppCompatActivity(), View.OnClickListener {
+
+    private lateinit var ic_home : ImageButton
+    private lateinit var ic_search : ImageButton
 
     companion object {
         const val REQUEST_FROM_CAMERA = 1001;
@@ -16,8 +21,29 @@ class CameraActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
+
+        ic_home = findViewById(R.id.ic_home)
+        ic_home.setOnClickListener(this)
+
+        ic_search = findViewById(R.id.ic_search)
+        ic_search.setOnClickListener(this)
+
         initUI()
     }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.ic_home -> run {
+                val mIntent = Intent(this, MainActivity::class.java)
+                startActivity(mIntent)
+            }
+            R.id.ic_search -> run {
+                val mIntent = Intent(this, SearchActivity::class.java)
+                startActivity(mIntent)
+            }
+        }
+    }
+
 
     private fun initUI() {
         btnCamera.setOnClickListener {

@@ -8,23 +8,26 @@
 
     <ImageView
         android:id="@+id/imgProfile"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btnCamera"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <Button
         android:id="@+id/btnCamera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="200dp"
         android:text="Take Camera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
+        app:layout_constraintTop_toTopOf="@+id/imgProfile"
+        app:layout_constraintBottom_toBottomOf="@id/btnGallery"/>
 
     <Button
         android:id="@+id/btnGallery"
@@ -34,10 +37,11 @@
         android:text="Pick Gallery"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCamera" />
+        app:layout_constraintTop_toTopOf="@+id/btnCamera"
+        app:layout_constraintBottom_toBottomOf="@id/linear"/>
 
     <LinearLayout
-        android:id="@+id/linear2"
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
