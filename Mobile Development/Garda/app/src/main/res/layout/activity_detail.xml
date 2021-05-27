@@ -61,7 +61,7 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btn_about"
+        app:srcCompat="@drawable/btn_about_selector"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="220dp"
         tools:ignore="MissingConstraints" />
@@ -70,7 +70,7 @@
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btn_instructure"
+        app:srcCompat="@drawable/btn_instruction_selector"
         tools:layout_editor_absoluteX="95dp"
         tools:layout_editor_absoluteY="220dp"
         tools:ignore="MissingConstraints" />
@@ -79,7 +79,7 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btn_harvest"
+        app:srcCompat="@drawable/btn_harvest_selector"
         tools:layout_editor_absoluteX="199dp"
         tools:layout_editor_absoluteY="220dp"
         tools:ignore="MissingConstraints" />

@@ -64,7 +64,7 @@ dependencies {
     implementation 'com.loopj.android:android-async-http:1.4.10'
     implementation 'androidx.viewpager2:viewpager2:1.0.0-rc01'
 
-    implementation 'com.google.firebase:firebase-storage:19.2.2'
+    implementation 'com.google.firebase:firebase-storage:20.0.0'
 
     implementation 'com.github.dhaval2404:imagepicker:1.7.4'
 }

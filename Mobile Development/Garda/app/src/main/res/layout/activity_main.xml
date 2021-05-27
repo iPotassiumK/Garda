@@ -96,6 +96,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
+            android:id="@+id/ic_home"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -103,6 +104,7 @@
             android:background="@drawable/ic_home"/>
 
         <ImageButton
+            android:id="@+id/ic_camera"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -111,6 +113,7 @@
             android:background="@drawable/ic_camera"/>
 
         <ImageButton
+            android:id="@+id/ic_search"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"

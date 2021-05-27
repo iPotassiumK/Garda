@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:201193564646:android:0e9732177810448e8ace27",
+        "android_client_info": {
+          "package_name": "com.example.garda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "201193564646-i65klvgt1hiun2vgv5v0f90brdk5jv3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPg_4EOQcHU7Pj9e2MtUHTZDnMQ9WeGnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "201193564646-i65klvgt1hiun2vgv5v0f90brdk5jv3g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:201193564646:android:51bbf77774d5673e8ace27",
         "android_client_info": {
           "package_name": "com.garda.cameraexperiment"
