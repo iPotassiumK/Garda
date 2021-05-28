@@ -32,7 +32,7 @@ class OnBoardingViewPagerAdapter(private var context: Context, private var onBoa
         val title: TextView
         val description : TextView
 
-        imageView = view.findViewById(R.id.imageView);
+        imageView = view.findViewById(R.id.imageView8);
         title = view.findViewById(R.id.title);
         description = view.findViewById(R.id.description);
 

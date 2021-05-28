@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Garda">
-        <activity android:name=".OnBoardingActivity"></activity>
+        <activity android:name=".detailblog.DetailBlogActivity"></activity>
+        <activity android:name=".onboarding.OnBoardingActivity" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".DetailActivity" />

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.example.garda.onboarding.OnBoardingActivity
 
 
 class SplashScreen : AppCompatActivity() {
@@ -17,7 +18,7 @@ class SplashScreen : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
 
 
-            val n = Intent(this, MainActivity::class.java)
+            val n = Intent(this, OnBoardingActivity::class.java)
             startActivity(n)
             finish()
 
