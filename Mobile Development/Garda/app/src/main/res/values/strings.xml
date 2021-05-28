@@ -2,6 +2,7 @@
     <string name="app_name">Garda</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="pic1">picture1</string>
-    <string name="pic2">picture2</string>
+    <string name="image_plants">Poster</string>
+    <string name="text_title">Title Text</string>
+    <string name="text_description">Description Text</string>
 </resources>
