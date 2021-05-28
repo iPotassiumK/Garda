@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "201193564646",
-    "project_id": "camera-upload-example",
-    "storage_bucket": "camera-upload-example.appspot.com"
+    "project_number": "478845017786",
+    "project_id": "tidy-apricot-313014",
+    "storage_bucket": "tidy-apricot-313014.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:201193564646:android:51bbf77774d5673e8ace27",
+        "mobilesdk_app_id": "1:478845017786:android:9e830db753926347faec83",
         "android_client_info": {
-          "package_name": "com.garda.cameraexperiment"
+          "package_name": "com.example.garda"
         }
       },
       "oauth_client": [
         {
-          "client_id": "201193564646-vvo32u24q809o49uk6h6dnu4s873pf3e.apps.googleusercontent.com",
+          "client_id": "478845017786-rde88lugqmrjfvestau6skr4k7sljbqg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.garda.cameraexperiment",
+            "package_name": "com.example.garda",
             "certificate_hash": "0cef2bf76b1e002c7c4661ab5cc8b472daa5aef3"
           }
         },
         {
-          "client_id": "201193564646-i65klvgt1hiun2vgv5v0f90brdk5jv3g.apps.googleusercontent.com",
+          "client_id": "478845017786-ecn10qp7vr4ihcgjmn3b85nd22v1vmq0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDPg_4EOQcHU7Pj9e2MtUHTZDnMQ9WeGnQ"
+          "current_key": "AIzaSyBbuRuf5BqiaFN6baNizlqvuxlLWZxKh68"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "201193564646-i65klvgt1hiun2vgv5v0f90brdk5jv3g.apps.googleusercontent.com",
+              "client_id": "478845017786-ecn10qp7vr4ihcgjmn3b85nd22v1vmq0.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

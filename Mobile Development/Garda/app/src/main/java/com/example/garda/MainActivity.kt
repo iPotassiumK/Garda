@@ -1,23 +1,22 @@
 package com.example.garda
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.fragment.app.Fragment
+import android.view.View
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.viewpager.widget.ViewPager
-import com.example.garda.fragment.CameraFragment
-import com.example.garda.fragment.HomeFragment
-import com.example.garda.fragment.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private val homeFragment = HomeFragment()
-    private val cameraFragment = CameraFragment()
-    private val searchFragment = SearchFragment()
+    private lateinit var ic_camera : ImageButton
+    private lateinit var ic_search :ImageButton
     private var currentPage = 0
     private var numPages = 0
 
@@ -28,6 +27,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        ic_camera = findViewById(R.id.ic_camera)
+        ic_camera.setOnClickListener(this)
+
+        ic_search = findViewById(R.id.ic_search)
+        ic_search.setOnClickListener(this)
 
         val lists: List<String> = listOf(
             "https://i.pinimg.com/originals/70/96/78/709678cc727b37324815304ba0a4d340.jpg",
@@ -45,24 +50,21 @@ class MainActivity : AppCompatActivity() {
 
         createSlider(assets)
 
-        makeCurrentFragment(homeFragment)
+    }
 
-        bottom_navigation.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.ic_home -> makeCurrentFragment(homeFragment)
-                R.id.ic_camera -> makeCurrentFragment(cameraFragment)
-                R.id.ic_search -> makeCurrentFragment(searchFragment)
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.ic_camera -> run {
+                val mIntent = Intent(this, CameraActivity::class.java)
+                startActivity(mIntent)
             }
-            true
+            R.id.ic_search -> run {
+                val mIntent = Intent(this, SearchActivity::class.java)
+                startActivity(mIntent)
+            }
         }
-
     }
 
-    private fun makeCurrentFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fl_wrapper, fragment)
-        transaction.commit()
-    }
 
     private fun createSlider(string: List<Int>) {
 
