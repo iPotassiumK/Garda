@@ -25,6 +25,6 @@ class DetailBlogActivity : AppCompatActivity() {
 
         nameTitle.text = blogs?.nameTitle
         nameFull.text = blogs?.nameFull
-        imageBlog.setImageResource(blogs!!.imageBlog)
+        blogs?.imageBlog?.let { imageBlog.setImageResource(it) }
     }
 }
