@@ -18,60 +18,64 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
             tools:ignore="MissingConstraints" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="551dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="150dp">
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="551dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/card_detail"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="-70dp"
-                tools:layout_editor_absoluteY="154dp" />
+            app:srcCompat="@drawable/card_detail"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-70dp"
+            tools:layout_editor_absoluteY="154dp" />
 
-            <TextView
-                android:id="@+id/txt_name_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Start Flowers"
-                android:layout_marginTop="40dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="25dp"
-                android:textColor="#009688"
-                android:fontFamily="@font/quicksand_medium"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="75dp"
-                tools:layout_editor_absoluteY="168dp"
-                tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/txt_name_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Start Flowers"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="25dp"
+            android:textColor="#009688"
+            android:fontFamily="@font/quicksand_medium"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="75dp"
+            tools:layout_editor_absoluteY="168dp"
+            tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/txt_name_full"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Start Flowers"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="18dp"
-                android:textColor="#009688"
-                android:fontFamily="@font/quicksand_light"
-                tools:layout_editor_absoluteX="75dp"
-                tools:layout_editor_absoluteY="168dp"
-                android:layout_below="@id/txt_name_title"
-                tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/txt_name_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Start Flowers"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="18dp"
+            android:textColor="#009688"
+            android:fontFamily="@font/quicksand_light"
+            tools:layout_editor_absoluteX="75dp"
+            tools:layout_editor_absoluteY="168dp"
+            android:layout_below="@id/txt_name_title"
+            tools:ignore="MissingConstraints" />
 
-            <ImageView
-                android:id="@+id/image_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/contentby"
-                android:layout_marginTop="25dp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/txt_name_full"
-                />
-        </RelativeLayout>
+        <ImageView
+            android:id="@+id/image_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/contentby"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txt_name_full"
+            />
+    </RelativeLayout>
+</FrameLayout>
+
     </FrameLayout>
 
 
