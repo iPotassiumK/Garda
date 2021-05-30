@@ -8,17 +8,24 @@ import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.garda.detailblog.BlogAdapter
+import com.example.garda.detailblog.BlogEntity
+import com.example.garda.detailblog.DataDummyBlog
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
+    private lateinit var rvBlog: RecyclerView
     private lateinit var ic_camera : ImageButton
     private lateinit var ic_search :ImageButton
     private var currentPage = 0
     private var numPages = 0
+    private var blogs: ArrayList<BlogEntity> = arrayListOf()
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
@@ -50,6 +57,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         createSlider(assets)
 
+        rvBlog = findViewById(R.id.rv_main)
+        rvBlog.setHasFixedSize(true)
+
+        blogs.addAll(DataDummyBlog.counterBlog)
+        showRecylerList()
+
+    }
+
+    private fun showRecylerList() {
+        rvBlog.layoutManager = LinearLayoutManager(this)
+        val blogAdapter = BlogAdapter(this, blogs)
+        rvBlog.adapter = blogAdapter
     }
 
     override fun onClick(v: View?) {

@@ -13,6 +13,7 @@
     app:cardCornerRadius="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recyclerViewBlog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
