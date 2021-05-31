@@ -1,21 +1,17 @@
 package com.example.garda
 
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.Toast
-import com.example.tflite.plants.Classifier
+import com.example.tflite.view.ImageClassifierActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.ml.modeldownloader.CustomModel
 import com.google.firebase.ml.modeldownloader.CustomModelDownloadConditions
 import com.google.firebase.ml.modeldownloader.DownloadType
 import com.google.firebase.ml.modeldownloader.FirebaseModelDownloader
 import kotlinx.android.synthetic.main.activity_camera.*
-import kotlinx.android.synthetic.main.adapter_slider.*
 import org.tensorflow.lite.Interpreter
 
 
@@ -24,10 +20,7 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var interpreter: Interpreter
     private lateinit var ic_home : ImageButton
     private lateinit var ic_search : ImageButton
-    private val mInputSize = 150
-    private val mModelPath = "Plants.tflite"
-    private val mLabelPath = "label.txt"
-    private lateinit var classifier: Classifier
+    private lateinit var imageclassifieractivity : ImageClassifierActivity
 
     companion object {
         const val REQUEST_FROM_CAMERA = 1001;
@@ -37,8 +30,7 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
-        initClassifier()
-//        initViews()
+
 //        val conditions = CustomModelDownloadConditions.Builder()
 //            .requireWifi()  // Also possible: .requireCharging() and .requireDeviceIdle()
 //            .build()
@@ -66,10 +58,6 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
         initUI()
     }
 
-    private fun initClassifier() {
-                classifier = Classifier(assets, mModelPath, mLabelPath, mInputSize)
-    }
-
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.ic_home -> run {
@@ -91,12 +79,6 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
 
         btnGallery.setOnClickListener {
             pickImageFromGallery()
-        }
-        btnPredict.setOnClickListener{
-            findViewById<ImageView>(R.id.imgProfile)
-            val bitmap = ((imgProfile as ImageView).drawable as BitmapDrawable).bitmap
-            val result = classifier.recognizeImage(bitmap)
-            runOnUiThread { Toast.makeText(this, result.get(0).title, Toast.LENGTH_SHORT).show() }
         }
     }
 
