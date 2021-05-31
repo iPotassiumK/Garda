@@ -37,7 +37,6 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-
         ic_home = findViewById(R.id.ic_home)
         ic_home.setOnClickListener(this)
 
