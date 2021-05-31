@@ -24,7 +24,7 @@ class AboutFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnCategory:ImageView = view.findViewById(R.id.imageView5)
+        val btnCategory:ImageView = view.findViewById(R.id.btn_about)
         btnCategory.setOnClickListener(this)
     }
 

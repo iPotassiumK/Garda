@@ -58,7 +58,7 @@
         tools:layout_editor_absoluteY="193dp" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/btn_about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/btn_about_selector"
@@ -67,7 +67,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/btn_instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/btn_instruction_selector"
@@ -76,7 +76,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/btn_harvest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/btn_harvest_selector"
@@ -92,6 +92,7 @@
         tools:layout_editor_absoluteY="234dp">
 
         <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </FrameLayout>
