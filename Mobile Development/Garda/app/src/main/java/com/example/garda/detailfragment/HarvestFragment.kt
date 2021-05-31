@@ -12,7 +12,7 @@ import com.example.garda.R
  * A simple [Fragment] subclass.
  */
 
-class HarvestFragment: Fragment(), View.OnClickListener {
+class HarvestFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,15 +20,5 @@ class HarvestFragment: Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_harvest,container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val btnCategory: ImageView = view.findViewById(R.id.btn_harvest)
-        btnCategory.setOnClickListener(this)
-    }
-
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
     }
 }

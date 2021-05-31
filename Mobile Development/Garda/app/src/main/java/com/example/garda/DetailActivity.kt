@@ -21,15 +21,15 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var ic_home : ImageButton
     private lateinit var ic_camera : ImageButton
     private lateinit var ic_search : ImageButton
-    private var fragment_about = AboutFragment()
-    private var fragment_instruction : InstructionFragment()
-    private var fragment_harvest : HarvestFragment()
+    private var fragmentabout = AboutFragment()
+    private var fragmentinstruction = InstructionFragment()
+    private var fragmentharvest = HarvestFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-        replaceFragment(fragment_about)
+        replaceFragment(fragmentabout)
 
         //get data from firebasefirestore
         val db = FirebaseFirestore.getInstance()
@@ -81,30 +81,18 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
                 val mIntent = Intent(this, SearchActivity::class.java)
                 startActivity(mIntent)
             }
+            R.id.btn_about -> replaceFragment(fragmentabout)
+            R.id.btn_instruction -> replaceFragment(fragmentinstruction)
+            R.id.btn_harvest -> replaceFragment(fragmentharvest)
         }
+        true
     }
+
     private fun replaceFragment(fragment : Fragment){
         if(fragment != null){
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.viewpager, fragment)
+            transaction.replace(R.id.fragment_container, fragment)
             transaction.commit()
-        }
-    }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.btn_about ->  {
-                val mIntent = Intent(fragment_about, AboutFragment)
-                startActivity(mIntent)
-            }
-            R.id.btn_instruction -> {
-                val mIntent = Intent(fragment_instruction, InstructionFragment)
-                startActivity(mIntent)
-            }
-            R.id.btn_harvest -> {
-                val mIntent = Intent(fragment_harvest, HarvestFragment)
-                startActivity(mIntent)
-            }
         }
     }
 }

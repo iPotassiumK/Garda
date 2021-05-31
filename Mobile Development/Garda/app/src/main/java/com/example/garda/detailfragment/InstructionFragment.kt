@@ -12,23 +12,13 @@ import com.example.garda.R
  * A simple [Fragment] subclass.
  */
 
-class InstructionFragment : Fragment(), View.OnClickListener {
+class InstructionFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_instruction,container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val btnCategory: ImageView = view.findViewById(R.id.btn_instruction)
-        btnCategory.setOnClickListener(this)
-    }
-
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        return inflater.inflate(R.layout.fragment_instruction, container, false)
     }
 }
