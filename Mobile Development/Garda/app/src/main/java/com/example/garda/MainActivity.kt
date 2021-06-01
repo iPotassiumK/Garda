@@ -41,13 +41,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ic_search = findViewById(R.id.ic_search)
         ic_search.setOnClickListener(this)
 
-        val lists: List<String> = listOf(
-            "https://i.pinimg.com/originals/70/96/78/709678cc727b37324815304ba0a4d340.jpg",
-            "https://www.brainyquote.com/photos_tr/en/a/anthonyjdangelo/153989/anthonyjdangelo1-2x.jpg",
-            "https://cdn.lurn.com/blog/files/uploads/image_32.png",
-        )
-
-
         val assets = listOf(
             R.drawable.foto1,
             R.drawable.foto2,
