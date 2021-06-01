@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
@@ -22,14 +23,13 @@ class OnBoardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_on_boarding)
 
         if (restorePrefData()){
             val i = Intent(applicationContext, MainActivity::class.java)
             startActivity(i)
             finish()
         }
-
-        setContentView(R.layout.activity_on_boarding)
 
         tabLayout = findViewById(R.id.tab_indicator)
         next = findViewById(R.id.next)
