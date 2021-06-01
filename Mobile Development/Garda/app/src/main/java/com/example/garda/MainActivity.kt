@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.garda.detailblog.BlogAdapter
 import com.example.garda.detailblog.BlogEntity
 import com.example.garda.detailblog.DataDummyBlog
+import com.example.garda.listsearch.SearchActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 

@@ -5,4 +5,5 @@
     <string name="image_plants">Poster</string>
     <string name="text_title">Title Text</string>
     <string name="text_description">Description Text</string>
+    <string name="query_hint">find your plant</string>
 </resources>

@@ -6,39 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".CameraActivity">
 
+
     <ImageView
         android:id="@+id/imgProfile"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/btnCamera"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <Button
         android:id="@+id/btnCamera"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="300dp"
         android:text="Take Camera"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgProfile"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/btnGallery"/>
 
     <Button
         android:id="@+id/btnGallery"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="50dp"
         android:text="Pick Gallery"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnCamera"
-        app:layout_constraintBottom_toBottomOf="@id/linear"/>
+        app:layout_constraintTop_toTopOf="@id/btnCamera"/>
+
+    <Button
+        android:id="@+id/btnPredict"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Predict"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnGallery"/>
 
     <LinearLayout
         android:id="@+id/linear"
@@ -74,7 +89,7 @@
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="20dp"
-            android:background="@drawable/ic_search"/>
+            android:background="@drawable/ic_search2"/>
 
     </LinearLayout>
 

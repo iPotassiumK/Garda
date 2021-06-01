@@ -1,18 +1,19 @@
 package com.example.garda
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.garda.detailfragment.AboutFragment
 import com.example.garda.detailfragment.HarvestFragment
 import com.example.garda.detailfragment.InstructionFragment
+import com.example.garda.listsearch.SearchActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_detail.*
 
@@ -66,7 +67,6 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
         ic_search.setOnClickListener(this)
 
     }
-
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.ic_camera -> run {
@@ -94,5 +94,6 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
             transaction.replace(R.id.fragment_container, fragment)
             transaction.commit()
         }
+        true
     }
 }

@@ -1,24 +1,27 @@
 package com.example.garda
 
 import android.content.Intent
+import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.Toast
+import com.example.garda.listsearch.SearchActivity
+import com.example.tflite.plants.Classifier
 import com.github.dhaval2404.imagepicker.ImagePicker
-import com.google.firebase.ml.modeldownloader.CustomModel
-import com.google.firebase.ml.modeldownloader.CustomModelDownloadConditions
-import com.google.firebase.ml.modeldownloader.DownloadType
-import com.google.firebase.ml.modeldownloader.FirebaseModelDownloader
 import kotlinx.android.synthetic.main.activity_camera.*
-import org.tensorflow.lite.Interpreter
+
 
 class CameraActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var interpreter: Interpreter
     private lateinit var ic_home : ImageButton
     private lateinit var ic_search : ImageButton
-
+    private val mInputSize = 150
+    private val mModelPath = "Plants.tflite"
+    private val mLabelPath = "label.txt"
+    private lateinit var classifier: Classifier
 
     companion object {
         const val REQUEST_FROM_CAMERA = 1001;
@@ -28,24 +31,25 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
-
-        val conditions = CustomModelDownloadConditions.Builder()
-            .requireWifi()  // Also possible: .requireCharging() and .requireDeviceIdle()
-            .build()
-        FirebaseModelDownloader.getInstance()
-            .getModel("your_model", DownloadType.LOCAL_MODEL_UPDATE_IN_BACKGROUND,
-                conditions)
-            .addOnSuccessListener { model: CustomModel? ->
-                // Download complete. Depending on your app, you could enable the ML
-                // feature, or switch from the local model to the remote model, etc.
-
-                // The CustomModel object contains the local path of the model file,
-                // which you can use to instantiate a TensorFlow Lite interpreter.
-                val modelFile = model?.file
-                if (modelFile != null) {
-                    interpreter = Interpreter(modelFile)
-                }
-            }
+        initClassifier()
+//        initViews()
+//        val conditions = CustomModelDownloadConditions.Builder()
+//            .requireWifi()  // Also possible: .requireCharging() and .requireDeviceIdle()
+//            .build()
+//        FirebaseModelDownloader.getInstance()
+//            .getModel("your_model", DownloadType.LOCAL_MODEL_UPDATE_IN_BACKGROUND,
+//                conditions)
+//            .addOnSuccessListener { model: CustomModel? ->
+//                // Download complete. Depending on your app, you could enable the ML
+//                // feature, or switch from the local model to the remote model, etc.
+//
+//                // The CustomModel object contains the local path of the model file,
+//                // which you can use to instantiate a TensorFlow Lite interpreter.
+//                val modelFile = model?.file
+//                if (modelFile != null) {
+//                    interpreter = Interpreter(modelFile)
+//                }
+//            }
 
         ic_home = findViewById(R.id.ic_home)
         ic_home.setOnClickListener(this)
@@ -54,6 +58,10 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
         ic_search.setOnClickListener(this)
 
         initUI()
+    }
+
+    private fun initClassifier() {
+        classifier = Classifier(assets, mModelPath, mLabelPath, mInputSize)
     }
 
     override fun onClick(v: View?) {
@@ -77,6 +85,12 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
 
         btnGallery.setOnClickListener {
             pickImageFromGallery()
+        }
+        btnPredict.setOnClickListener{
+            findViewById<ImageView>(R.id.imgProfile)
+            val bitmap = ((imgProfile as ImageView).drawable as BitmapDrawable).bitmap
+            val result = classifier.recognizeImage(bitmap)
+            runOnUiThread { Toast.makeText(this, result.get(0).title, Toast.LENGTH_SHORT).show() }
         }
     }
 

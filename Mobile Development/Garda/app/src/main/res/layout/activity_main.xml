@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainActivity"
-    android:background="@drawable/translaransi_50"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -135,7 +135,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/ic_search"/>
+                android:background="@drawable/ic_search2"/>
 
         </LinearLayout>
 
