@@ -34,7 +34,7 @@
             android:layout_marginRight="10dp"
             android:iconifiedByDefault="false"
             android:queryHint="@string/query_hint"
-            android:text="@string/query_hint"
+            android:hint="@string/query_hint"
             tools:layout_editor_absoluteX="16dp" />
 
 

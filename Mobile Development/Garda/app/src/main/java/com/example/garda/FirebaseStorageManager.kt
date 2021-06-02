@@ -6,6 +6,7 @@ import android.net.Uri
 import android.util.Log
 import com.google.firebase.storage.FirebaseStorage
 
+
 class FirebaseStorageManager {
     private val TAG = "FirebaseStorageManager"
     private val mStorageRef = FirebaseStorage.getInstance().reference
@@ -16,7 +17,7 @@ class FirebaseStorageManager {
             mProgressDialog = ProgressDialog(mContext)
             mProgressDialog.setMessage("Please wait, image being uploading...")
 
-            val uploadTask = mStorageRef.child("users/profilePic.png"+ imageURI.getLastPathSegment()).putFile(imageURI)
+            val uploadTask = mStorageRef.child("users/Plants").putFile(imageURI)
 
             uploadTask.addOnSuccessListener {
                 //success

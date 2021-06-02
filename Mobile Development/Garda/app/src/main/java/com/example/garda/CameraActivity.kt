@@ -32,24 +32,6 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
         initClassifier()
-//        initViews()
-//        val conditions = CustomModelDownloadConditions.Builder()
-//            .requireWifi()  // Also possible: .requireCharging() and .requireDeviceIdle()
-//            .build()
-//        FirebaseModelDownloader.getInstance()
-//            .getModel("your_model", DownloadType.LOCAL_MODEL_UPDATE_IN_BACKGROUND,
-//                conditions)
-//            .addOnSuccessListener { model: CustomModel? ->
-//                // Download complete. Depending on your app, you could enable the ML
-//                // feature, or switch from the local model to the remote model, etc.
-//
-//                // The CustomModel object contains the local path of the model file,
-//                // which you can use to instantiate a TensorFlow Lite interpreter.
-//                val modelFile = model?.file
-//                if (modelFile != null) {
-//                    interpreter = Interpreter(modelFile)
-//                }
-//            }
 
         ic_home = findViewById(R.id.ic_home)
         ic_home.setOnClickListener(this)
@@ -104,12 +86,14 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_FROM_CAMERA) {
+        if (requestCode == REQUEST_FROM_CAMERA || requestCode == REQUEST_FROM_GALLERY) {
             when (requestCode) {
+
                 REQUEST_FROM_CAMERA -> {
                     imgProfile.setImageURI(data!!.data)
                     FirebaseStorageManager().uploadImage(this, data.data!!)
                 }
+
                 REQUEST_FROM_GALLERY -> {
                     imgProfile.setImageURI(data!!.data)
                     FirebaseStorageManager().uploadImage(this, data.data!!)

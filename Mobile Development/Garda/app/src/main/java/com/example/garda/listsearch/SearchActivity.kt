@@ -34,7 +34,7 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
 
         mSearchText = findViewById(R.id.srcView)
         mRecyclerView = findViewById(R.id.rvPlants)
-        mDatabase = FirebaseDatabase.getInstance().getReference("plants")
+        mDatabase = FirebaseDatabase.getInstance().getReference("PlantsEntity")
 
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.setLayoutManager(LinearLayoutManager(this))

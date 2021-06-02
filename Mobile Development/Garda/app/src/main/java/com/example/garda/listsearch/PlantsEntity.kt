@@ -6,7 +6,6 @@ class PlantsEntity {
     var imgPlants : String? = null
 
     constructor(){
-
     }
 
     constructor(name : String?, science : String?, imgPlants : String?){
