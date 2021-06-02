@@ -13,6 +13,7 @@ class SliderAdapter(private val context: Context, private val stringList: List<I
 ) : PagerAdapter() {
 
     private val TAG = "SliderAdapter"
+
     private val inflater: LayoutInflater = LayoutInflater.from(context)
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any ) {
