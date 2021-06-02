@@ -76,7 +76,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
-    implementation 'com.squareup.picasso:picasso:2.5.2'
+
     implementation 'com.loopj.android:android-async-http:1.4.10'
     implementation 'androidx.viewpager2:viewpager2:1.0.0-rc01'
 
@@ -84,4 +84,5 @@ dependencies {
 
     implementation 'com.github.dhaval2404:imagepicker:1.7.4'
     implementation 'androidx.core:core-ktx:1.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
