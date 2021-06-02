@@ -56,7 +56,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0-rc1'
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
 
-    implementation  'com.firebaseui:firebase-ui-database:2.3.0'
+    implementation 'com.firebaseui:firebase-ui-database:2.3.0'
     implementation 'com.google.firebase:firebase-database:11.0.4'
     implementation 'com.google.firebase:firebase-firestore:23.0.0'
     implementation 'com.google.firebase:firebase-storage:20.0.0'
@@ -87,4 +87,5 @@ dependencies {
     implementation 'com.github.dhaval2404:imagepicker:1.7.4'
     implementation 'androidx.core:core-ktx:1.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

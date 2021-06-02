@@ -43,7 +43,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPlants"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="465dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearSearch"
@@ -51,43 +51,50 @@
         tools:listitem="@layout/list_item_plants"
         />
 
-    <LinearLayout
-        android:id="@+id/linear"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:background="@color/warna_g"
-        android:gravity="center_horizontal"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="587dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/warna_g"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="587dp">
 
-        <ImageButton
-            android:id="@+id/ic_home"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/ic_home"/>
 
-        <ImageButton
-            android:id="@+id/ic_camera"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="100dp"
-            android:background="@drawable/ic_camera"/>
+            <ImageButton
+                android:id="@+id/ic_home"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_home" />
 
-        <ImageButton
-            android:id="@+id/ic_search"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/ic_search2"/>
+            <ImageButton
+                android:id="@+id/ic_camera"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:background="@drawable/ic_camera" />
 
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/ic_search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_search2" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

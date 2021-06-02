@@ -1,14 +1,14 @@
 package com.example.garda.listsearch
 
 class PlantsEntity {
-    var name : String? = null
-    var science : String? = null
-    var imgPlants : String? = null
+    var name :String = ""
+    var science : String = ""
+    var imgPlants : String = ""
 
-    constructor(){
+    constructor() {
     }
 
-    constructor(name : String?, science : String?, imgPlants : String?){
+    constructor(name : String, science : String, imgPlants : String){
         this.name = name
         this.science = science
         this.imgPlants = imgPlants
