@@ -25,6 +25,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        mlModelBinding true
     }
 
     buildTypes {
@@ -54,7 +55,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore-ktx:23.0.0'
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0-rc1'
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
-
     implementation  'com.firebaseui:firebase-ui-database:2.3.0'
     implementation 'com.google.firebase:firebase-database:11.0.4'
 
