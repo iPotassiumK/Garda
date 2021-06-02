@@ -18,7 +18,7 @@
         <activity android:name=".detailblog.DetailBlogActivity"></activity>
         <activity android:name=".onboarding.OnBoardingActivity" />
         <activity android:name=".CameraActivity" />
-        <activity android:name=".SearchActivity" />
+        <activity android:name=".listsearch.SearchActivity"/>
         <activity android:name=".DetailActivity" />
         <activity
             android:name=".SplashScreen"
