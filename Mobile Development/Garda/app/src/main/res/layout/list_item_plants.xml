@@ -34,6 +34,7 @@
         android:layout_toRightOf="@id/plantsImage"
         android:fontFamily="@font/quicksand_light"
         android:textColor="@color/warna_g"
+        android:textStyle="italic"
         android:ellipsize="end"
         android:maxLines="3"
         android:hint="science plant" />
