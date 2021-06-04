@@ -68,11 +68,18 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
         btnGallery.setOnClickListener {
             pickImageFromGallery()
         }
-        btnPredict.setOnClickListener{
-            findViewById<ImageView>(R.id.imgProfile)
-            val bitmap = ((imgProfile as ImageView).drawable as BitmapDrawable).bitmap
-            val result = classifier.recognizeImage(bitmap)
-            runOnUiThread { Toast.makeText(this, result.get(0).title, Toast.LENGTH_SHORT).show() }
+        btnPredict.setOnClickListener {
+            val a: Boolean = false
+            if ( a) {
+                findViewById<ImageView>(R.id.imgProfile)
+                val bitmap = ((imgProfile as ImageView).drawable as BitmapDrawable).bitmap
+                val result = classifier.recognizeImage(bitmap)
+                runOnUiThread {
+                    Toast.makeText(this, result.get(0).title, Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Please, choose an image!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
