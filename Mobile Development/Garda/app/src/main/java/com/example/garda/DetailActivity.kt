@@ -26,11 +26,17 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
     private var fragmentinstruction = InstructionFragment()
     private var fragmentharvest = HarvestFragment()
 
+    companion object {
+        const val EXTRA_PLANT = "extra_plant"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         replaceFragment(fragmentabout)
+
+//        val intent = intent
+//         intent.getStringExtra(resources.getString(R.string.name_plant))
 
         //get data from firebasefirestore
         val db = FirebaseFirestore.getInstance()
@@ -39,7 +45,7 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
         val fragment_instruction = findViewById(R.id.fragment_instruction) as TextView
         val fragment_harvest = findViewById(R.id.fragment_harvest) as TextView
 
-        val docRef = db.collection("plants").document("grape vine")
+        val docRef = db.collection("plants").document(resources.getString(R.string.name_plant))
         docRef.get()
             .addOnSuccessListener{ document ->
                 if(document != null) {
@@ -73,8 +79,8 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
                 val mIntent = Intent(this, CameraActivity::class.java)
                 startActivity(mIntent)
             }
-            R.id.ic_camera -> run {
-                val mIntent = Intent(this, CameraActivity::class.java)
+            R.id.ic_home -> run {
+                val mIntent = Intent(this, MainActivity::class.java)
                 startActivity(mIntent)
             }
             R.id.ic_search -> run {

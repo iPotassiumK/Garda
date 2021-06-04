@@ -26,6 +26,7 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
     companion object {
         const val REQUEST_FROM_CAMERA = 1001;
         const val REQUEST_FROM_GALLERY = 1002;
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,17 +70,24 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
             pickImageFromGallery()
         }
         btnPredict.setOnClickListener {
-            val a: Boolean = false
-            if ( a) {
-                findViewById<ImageView>(R.id.imgProfile)
+//            val a: Boolean = false
+//            if ( a) {
+               findViewById<ImageView>(R.id.imgProfile)
                 val bitmap = ((imgProfile as ImageView).drawable as BitmapDrawable).bitmap
                 val result = classifier.recognizeImage(bitmap)
+                val resultPlant = result.get(0).title
+
+
                 runOnUiThread {
-                    Toast.makeText(this, result.get(0).title, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, resultPlant, Toast.LENGTH_SHORT).show()
+
+                    val moveWithDataIntent = Intent(this, DetailActivity::class.java)
+                    moveWithDataIntent.putExtra(DetailActivity.EXTRA_PLANT, resultPlant)
+                    startActivity(moveWithDataIntent)
                 }
-            } else {
-                Toast.makeText(this, "Please, choose an image!", Toast.LENGTH_SHORT).show()
-            }
+//            } else {
+//                Toast.makeText(this, "Please, choose an image!", Toast.LENGTH_SHORT).show()
+//            }
         }
     }
 
