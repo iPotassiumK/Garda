@@ -7,4 +7,8 @@
     <string name="text_description">Description Text</string>
     <string name="query_hint">find your plant</string>
     <string name="name_plant">Grape Vine</string>
+    
+    <string name="tab_1">About</string>
+    <string name="tab_2">Instruction</string>
+    <string name="tab_3">Harvest</string>
 </resources>
