@@ -22,6 +22,7 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
     private val mModelPath = "Plants.tflite"
     private val mLabelPath = "label.txt"
     private lateinit var classifier: Classifier
+    private var condition = false
 
     companion object {
         const val REQUEST_FROM_CAMERA = 1001;
@@ -70,8 +71,7 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
             pickImageFromGallery()
         }
         btnPredict.setOnClickListener {
-//            val a: Boolean = false
-//            if ( a) {
+            if (condition) {
                findViewById<ImageView>(R.id.imgProfile)
                 val bitmap = ((imgProfile as ImageView).drawable as BitmapDrawable).bitmap
                 val result = classifier.recognizeImage(bitmap)
@@ -85,9 +85,9 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
                     moveWithDataIntent.putExtra(DetailActivity.EXTRA_PLANT, resultPlant)
                     startActivity(moveWithDataIntent)
                 }
-//            } else {
-//                Toast.makeText(this, "Please, choose an image!", Toast.LENGTH_SHORT).show()
-//            }
+           } else {
+                Toast.makeText(this, "Please, choose an image!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -107,11 +107,13 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
                 REQUEST_FROM_CAMERA -> {
                     imgProfile.setImageURI(data!!.data)
                     FirebaseStorageManager().uploadImage(this, data.data!!)
+                    condition = true
                 }
 
                 REQUEST_FROM_GALLERY -> {
                     imgProfile.setImageURI(data!!.data)
                     FirebaseStorageManager().uploadImage(this, data.data!!)
+                    condition = true
                 }
             }
         }
