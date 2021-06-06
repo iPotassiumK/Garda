@@ -27,7 +27,7 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var mRecyclerView : RecyclerView
     lateinit var mDatabase : DatabaseReference
 
-    lateinit var FirebaseRecyclerAdapter : FirebaseRecyclerAdapter<PlantsEntity , UsersViewHolder>
+    lateinit var FirebaseRecyclerAdapter : FirebaseRecyclerAdapter<PlantsEntity , PlantsViewHolder>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,15 +75,15 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
 
             val firebaseSearchQuery = mDatabase.orderByChild("name").startAt(searchText).endAt(searchText + "\uf8ff")
 
-            FirebaseRecyclerAdapter = object : FirebaseRecyclerAdapter<PlantsEntity, UsersViewHolder>(
+            FirebaseRecyclerAdapter = object : FirebaseRecyclerAdapter<PlantsEntity,PlantsViewHolder>(
 
                 PlantsEntity::class.java,
                 R.layout.list_item_plants,
-                UsersViewHolder::class.java,
+                PlantsViewHolder::class.java,
                 firebaseSearchQuery
 
             ) {
-                override fun populateViewHolder(viewHolder: UsersViewHolder, model: PlantsEntity, position: Int) {
+                override fun populateViewHolder(viewHolder: PlantsViewHolder, model: PlantsEntity, position: Int) {
 
                     viewHolder.mview.plantsName.setText(model.name)
                     viewHolder.mview.plantsScience.setText(model.science)
@@ -95,7 +95,7 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     // // View Holder Class
-    class UsersViewHolder(var mview : View) : RecyclerView.ViewHolder(mview) {
+    class PlantsViewHolder(var mview : View) : RecyclerView.ViewHolder(mview) {
 
     }
         override fun onClick(v: View?) {

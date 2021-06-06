@@ -16,10 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Garda">
         <activity android:name=".detailblog.DetailBlogActivity"></activity>
-        <activity android:name=".onboarding.OnBoardingActivity" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".listsearch.SearchActivity"/>
-        <activity android:name=".DetailActivity" />
+        <activity android:name=".DetailActivity"
+            android:parentActivityName=".listsearch.SearchActivity"/>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
