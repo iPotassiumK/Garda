@@ -33,6 +33,7 @@ class InstructionFragment : Fragment() {
         val db = FirebaseFirestore.getInstance()
 
         val txt_instruction: TextView = view.findViewById(R.id.txt_instruction)
+        val txt_name: TextView = view.findViewById(R.id.txt_name)
 
         val docRef = db.collection("plants").document("${txt_name}")
         docRef.get()

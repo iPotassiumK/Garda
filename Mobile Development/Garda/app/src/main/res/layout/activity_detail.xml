@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white">
         <ImageView
-            android:id="@+id/imagVIew2"
+            android:id="@+id/imgPlants"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@color/grey"
@@ -51,7 +51,7 @@
                     android:id="@+id/txt_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Carrots"
+                    android:hint="broccoli"
                     android:fontFamily="@font/quicksand_medium"
                     android:layout_marginTop="15dp"
                     android:layout_toRightOf="@id/imageView4"

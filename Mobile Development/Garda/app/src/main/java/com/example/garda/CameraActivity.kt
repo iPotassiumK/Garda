@@ -72,8 +72,8 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
         }
         btnPredict.setOnClickListener {
             if (condition) {
-               findViewById<ImageView>(R.id.imgProfile)
-                val bitmap = ((imgProfile as ImageView).drawable as BitmapDrawable).bitmap
+               findViewById<ImageView>(R.id.imgPlants)
+                val bitmap = ((imgPlants as ImageView).drawable as BitmapDrawable).bitmap
                 val result = classifier.recognizeImage(bitmap)
                 val resultPlant = result.get(0).title
 
@@ -105,13 +105,13 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
             when (requestCode) {
 
                 REQUEST_FROM_CAMERA -> {
-                    imgProfile.setImageURI(data!!.data)
+                    imgPlants.setImageURI(data!!.data)
                     FirebaseStorageManager().uploadImage(this, data.data!!)
                     condition = true
                 }
 
                 REQUEST_FROM_GALLERY -> {
-                    imgProfile.setImageURI(data!!.data)
+                    imgPlants.setImageURI(data!!.data)
                     FirebaseStorageManager().uploadImage(this, data.data!!)
                     condition = true
                 }

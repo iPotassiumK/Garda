@@ -87,14 +87,14 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
             ) {
                 override fun populateViewHolder(viewHolder: PlantsViewHolder, model: PlantsEntity, position: Int) {
 
-                    viewHolder.mview.plantsName.setText(model.name)
-                    viewHolder.mview.plantsScience.setText(model.science)
-                    Picasso.get().load(model.imgPlants).into(viewHolder.mview.plantsImage)
+                    viewHolder.mview.txt_name.setText(model.txt_name)
+                    viewHolder.mview.txt_science.setText(model.txt_science)
+                    Picasso.get().load(model.imgPlants).into(viewHolder.mview.imgPlants)
 
 
                     viewHolder.mview.setOnClickListener{
                         val moveWithDataIntent = Intent(this@SearchActivity, DetailActivity::class.java)
-                        moveWithDataIntent.putExtra(DetailActivity.EXTRA_PLANT, plantsName)
+//                        moveWithDataIntent.putExtra(DetailActivity.EXTRA_PLANT, txt_name)
                         startActivity(moveWithDataIntent)
                     }
                 }

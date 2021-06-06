@@ -10,8 +10,5 @@
     
     <string name="tab_1">About</string>
     <string name="tab_2">Instruction</string>
-    <string name="tab_3">Harvest</string>
-    <string name="onboarding_slide1_title">GARDA is an gardening assistant that can help you in sorting plants</string>
-    <string name="onboarding_slide2_title">Find your favorite plants in here</string>
-    <string name="onboarding_slide3_title">You can predict the type of your favorite plant</string>
+    <string name="tab_3">Harvest</string>\
 </resources>

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.garda.R
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_detail.*
 
 /**
@@ -25,15 +26,20 @@ class HarvestFragment: Fragment() {
         return inflater.inflate(R.layout.fragment_about, container, false)
 
 
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         //get data from firebasefirestore
         val db = FirebaseFirestore.getInstance()
 
         val txt_harvest: TextView = view.findViewById(R.id.txt_harvest)
+        val txt_name: TextView = view.findViewById(R.id.txt_name)
 
         val docRef = db.collection("plants").document("${txt_name}")
         docRef.get()

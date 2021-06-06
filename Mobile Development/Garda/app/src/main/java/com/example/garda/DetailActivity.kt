@@ -33,6 +33,30 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
+        val db = FirebaseFirestore.getInstance()
+
+        val txt_science: TextView = findViewById(R.id.txt_science)
+        val txt_name: TextView = findViewById(R.id.txt_name)
+
+        val docRef = db.collection("plants").document("${txt_name}")
+        docRef.get()
+            .addOnSuccessListener{ document ->
+                if(document != null) {
+
+                    Log.d("exist", "DocumentSnapshot data: ${document.data}")
+
+                    txt_science.text = document.getString("science")
+
+                } else {
+                    Log.d("sorry there is no exist", "No Such Document")
+                }
+            }
+            .addOnFailureListener {exception ->
+                Log.d("sorry you get an error", "get failed with", exception)
+            }
+
+
+
         val bundle = Bundle()
         val sectionsPagerAdapter = SectionPagerAdapter(this, bundle)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
