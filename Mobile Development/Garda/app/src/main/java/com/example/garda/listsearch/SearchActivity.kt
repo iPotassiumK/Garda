@@ -11,12 +11,14 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.garda.CameraActivity
+import com.example.garda.DetailActivity
 import com.example.garda.MainActivity
 import com.example.garda.R
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.list_item_plants.*
 import kotlinx.android.synthetic.main.list_item_plants.view.*
 
 class SearchActivity : AppCompatActivity(), View.OnClickListener {
@@ -88,6 +90,13 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
                     viewHolder.mview.plantsName.setText(model.name)
                     viewHolder.mview.plantsScience.setText(model.science)
                     Picasso.get().load(model.imgPlants).into(viewHolder.mview.plantsImage)
+
+
+                    viewHolder.mview.setOnClickListener{
+                        val moveWithDataIntent = Intent(this@SearchActivity, DetailActivity::class.java)
+                        moveWithDataIntent.putExtra(DetailActivity.EXTRA_PLANT, plantsName)
+                        startActivity(moveWithDataIntent)
+                    }
                 }
             }
             mRecyclerView.adapter = FirebaseRecyclerAdapter

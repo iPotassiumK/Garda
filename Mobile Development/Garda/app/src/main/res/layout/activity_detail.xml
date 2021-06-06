@@ -94,45 +94,6 @@
                         android:layout_below="@id/tabs"/>
                 </RelativeLayout>
             </RelativeLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@color/warna_g"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    android:layout_gravity="bottom"
-                    tools:layout_editor_absoluteX="3dp"
-                    tools:layout_editor_absoluteY="587dp">
-
-
-                    <ImageButton
-                        android:id="@+id/ic_home"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/ic_home" />
-
-                    <ImageButton
-                        android:id="@+id/ic_camera"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="100dp"
-                        android:layout_marginRight="100dp"
-                        android:background="@drawable/ic_camera" />
-
-                    <ImageButton
-                        android:id="@+id/ic_search"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/ic_search2" />
-
-                </LinearLayout>
         </FrameLayout>
 
     </FrameLayout>

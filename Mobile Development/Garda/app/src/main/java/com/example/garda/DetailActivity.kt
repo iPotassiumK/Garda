@@ -43,42 +43,17 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
         }.attach()
         supportActionBar?.elevation = 0f
 
-
         //passdatafromsearch
         val actionBar : ActionBar? = supportActionBar
-        actionBar!!.setDisplayHomeAsUpEnabled(true)
-        actionBar!!.setDisplayShowHomeEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.setDisplayShowHomeEnabled(true)
 
-        var intent = intent
-        val txt_name = intent.getStringExtra("txt_name")
-        val txt_science = intent.getStringExtra("txt_science")
-        val imgPlants = intent.getIntExtra("imgPlants", 0)
+        val intent = Intent()
+        var resultPlant = intent.getStringExtra("txt_name")
+        txt_name.setText(resultPlant)
+//        var txt_science = intent.getStringExtra("txt_science")
+//        var imgPlants = intent.getIntExtra("imgPlants", 0)
 
-        //get data from firebasefirestore
-        val db = FirebaseFirestore.getInstance()
-
-        var txt_about = findViewById(R.id.txt_about) as TextView
-        var txt_instruction = findViewById(R.id.txt_instruction) as TextView
-        var txt_harvest = findViewById(R.id.txt_harvest) as TextView
-
-        val docRef = db.collection("plants").document("${txt_name}")
-        docRef.get()
-            .addOnSuccessListener{ document ->
-                if(document != null) {
-
-                    Log.d("exist", "DocumentSnapshot data: ${document.data}")
-
-                    txt_about.text = document.getString("about")
-                    txt_instruction.text = document.getString("instruction")
-                    txt_harvest.text = document.getString("harvest")
-
-                } else {
-                    Log.d("sorry there is no exist", "No Such Document")
-                }
-            }
-            .addOnFailureListener {exception ->
-                Log.d("sorry you get an error", "get failed with", exception)
-            }
     }
 
     override fun onClick(v: View?) {
