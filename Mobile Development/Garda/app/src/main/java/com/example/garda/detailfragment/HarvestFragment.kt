@@ -41,7 +41,7 @@ class HarvestFragment: Fragment() {
         val txt_harvest: TextView = view.findViewById(R.id.txt_harvest)
 //        val txt_name: TextView = view.findViewById(R.id.txt_name)
 
-        val docRef = db.collection("plants").document("broccoli")
+        val docRef = db.collection("plants").document("chili")
         docRef.get()
             .addOnSuccessListener{ document ->
                 if(document != null) {

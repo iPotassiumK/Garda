@@ -36,7 +36,7 @@ class AboutFragment : Fragment() {
         val txt_about:TextView = view.findViewById(R.id.txt_about)
 //        val txt_name: TextView = view.findViewById(R.id.txt_name)
 
-        val docRef = db.collection("plants").document("broccoli")
+        val docRef = db.collection("plants").document("chili")
         docRef.get()
             .addOnSuccessListener{ document ->
                 if(document != null) {
