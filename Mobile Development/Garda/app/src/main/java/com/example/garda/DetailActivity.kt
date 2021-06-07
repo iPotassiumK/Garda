@@ -16,7 +16,8 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_detail.*
 
-class DetailActivity : AppCompatActivity(), View.OnClickListener {
+class DetailActivity : AppCompatActivity()
+{
 
     companion object {
         const val EXTRA_PLANT = "extra_plant"
@@ -33,27 +34,27 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val db = FirebaseFirestore.getInstance()
-
-        val txt_science: TextView = findViewById(R.id.txt_science)
-        val txt_name: TextView = findViewById(R.id.txt_name)
-
-        val docRef = db.collection("plants").document("${txt_name}")
-        docRef.get()
-            .addOnSuccessListener{ document ->
-                if(document != null) {
-
-                    Log.d("exist", "DocumentSnapshot data: ${document.data}")
-
-                    txt_science.text = document.getString("science")
-
-                } else {
-                    Log.d("sorry there is no exist", "No Such Document")
-                }
-            }
-            .addOnFailureListener {exception ->
-                Log.d("sorry you get an error", "get failed with", exception)
-            }
+//        val db = FirebaseFirestore.getInstance()
+//
+//        val txt_science: TextView = findViewById(R.id.txt_science)
+//        val txt_name: TextView = findViewById(R.id.txt_name)
+//
+//        val docRef = db.collection("plants").document("broccoli")
+//        docRef.get()
+//            .addOnSuccessListener{ document ->
+//                if(document != null) {
+//
+//                    Log.d("exist", "DocumentSnapshot data: ${document.data}")
+//
+//                    txt_science.text = document.getString("science")
+//
+//                } else {
+//                    Log.d("sorry there is no exist", "No Such Document")
+//                }
+//            }
+//            .addOnFailureListener {exception ->
+//                Log.d("sorry you get an error", "get failed with", exception)
+//            }
 
 
 
@@ -72,28 +73,11 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
         actionBar?.setDisplayHomeAsUpEnabled(true)
         actionBar?.setDisplayShowHomeEnabled(true)
 
-        val intent = Intent()
-        var resultPlant = intent.getStringExtra("txt_name")
-        txt_name.setText(resultPlant)
+//        val intent = Intent()
+//        var resultPlant = intent.getStringExtra("txt_name")
+//        txt_name.setText(resultPlant)
 //        var txt_science = intent.getStringExtra("txt_science")
 //        var imgPlants = intent.getIntExtra("imgPlants", 0)
 
-    }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.ic_camera -> run {
-                val mIntent = Intent(this, CameraActivity::class.java)
-                startActivity(mIntent)
-            }
-            R.id.ic_home -> run {
-                val mIntent = Intent(this, MainActivity::class.java)
-                startActivity(mIntent)
-            }
-            R.id.ic_search -> run {
-                val mIntent = Intent(this, SearchActivity::class.java)
-                startActivity(mIntent)
-            }
-        }
     }
 }

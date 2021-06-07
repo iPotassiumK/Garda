@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.ActionBar
 import com.example.garda.R
 
 class DetailBlogActivity : AppCompatActivity() {
@@ -17,7 +18,6 @@ class DetailBlogActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_blog)
-
 
         var nameTitle:TextView = findViewById(R.id.txt_name_title)
         var nameFull:TextView = findViewById(R.id.txt_name_full)

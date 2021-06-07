@@ -21,7 +21,7 @@ class InstructionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_about, container, false)
+        return inflater.inflate(R.layout.fragment_instruction, container, false)
 
 
     }
@@ -33,9 +33,9 @@ class InstructionFragment : Fragment() {
         val db = FirebaseFirestore.getInstance()
 
         val txt_instruction: TextView = view.findViewById(R.id.txt_instruction)
-        val txt_name: TextView = view.findViewById(R.id.txt_name)
+//        val txt_name: TextView = view.findViewById(R.id.txt_name)
 
-        val docRef = db.collection("plants").document("${txt_name}")
+        val docRef = db.collection("plants").document("broccoli")
         docRef.get()
             .addOnSuccessListener{ document ->
                 if(document != null) {

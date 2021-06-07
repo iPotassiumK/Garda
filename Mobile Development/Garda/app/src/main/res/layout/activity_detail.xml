@@ -22,7 +22,7 @@
             tools:ignore="MissingConstraints" />
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <RelativeLayout
                 android:id="@+id/relativeTitle"
                 android:layout_width="match_parent"
@@ -42,7 +42,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/logo_detail"
-                    android:layout_margin="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="168dp"
                     tools:ignore="MissingConstraints" />
@@ -52,8 +53,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="broccoli"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/quicksand_medium"
-                    android:layout_marginTop="15dp"
                     android:layout_toRightOf="@id/imageView4"
                     android:textStyle="bold"
                     tools:layout_editor_absoluteX="75dp"

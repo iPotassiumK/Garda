@@ -23,7 +23,7 @@ class HarvestFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_about, container, false)
+        return inflater.inflate(R.layout.fragment_harvest, container, false)
 
 
 
@@ -39,9 +39,9 @@ class HarvestFragment: Fragment() {
         val db = FirebaseFirestore.getInstance()
 
         val txt_harvest: TextView = view.findViewById(R.id.txt_harvest)
-        val txt_name: TextView = view.findViewById(R.id.txt_name)
+//        val txt_name: TextView = view.findViewById(R.id.txt_name)
 
-        val docRef = db.collection("plants").document("${txt_name}")
+        val docRef = db.collection("plants").document("broccoli")
         docRef.get()
             .addOnSuccessListener{ document ->
                 if(document != null) {

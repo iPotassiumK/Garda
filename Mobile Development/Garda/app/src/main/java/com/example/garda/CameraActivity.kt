@@ -106,13 +106,13 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
 
                 REQUEST_FROM_CAMERA -> {
                     imgPlants.setImageURI(data!!.data)
-                    FirebaseStorageManager().uploadImage(this, data.data!!)
+                    data.data?.let { FirebaseStorageManager().uploadImage(this, it) }
                     condition = true
                 }
 
                 REQUEST_FROM_GALLERY -> {
                     imgPlants.setImageURI(data!!.data)
-                    FirebaseStorageManager().uploadImage(this, data.data!!)
+                    data.data?.let { FirebaseStorageManager().uploadImage(this, it) }
                     condition = true
                 }
             }
