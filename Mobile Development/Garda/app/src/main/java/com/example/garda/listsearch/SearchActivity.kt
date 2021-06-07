@@ -87,8 +87,8 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
             ) {
                 override fun populateViewHolder(viewHolder: PlantsViewHolder, model: PlantsEntity, position: Int) {
 
-                    viewHolder.mview.txt_name.setText(model.txt_name)
-                    viewHolder.mview.txt_science.setText(model.txt_science)
+                    viewHolder.mview.txt_name.setText(model.name)
+                    viewHolder.mview.txt_science.setText(model.science)
                     Picasso.get().load(model.imgPlants).into(viewHolder.mview.imgPlants)
 
 
