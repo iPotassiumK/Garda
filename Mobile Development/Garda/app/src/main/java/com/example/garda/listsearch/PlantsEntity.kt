@@ -8,9 +8,9 @@ class PlantsEntity {
     constructor() {
     }
 
-    constructor(txt_name : String, txt_science : String, imgPlants : String){
-        this.name = txt_name
-        this.science = txt_science
+    constructor(name : String, science : String, imgPlants : String){
+        this.name = name
+        this.science = science
         this.imgPlants = imgPlants
     }
 }
