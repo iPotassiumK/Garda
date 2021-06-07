@@ -16,6 +16,7 @@
             android:layout_height="200dp"
             android:background="@color/grey"
             android:backgroundTint="@color/grey"
+            android:scaleType="fitXY"
             app:srcCompat="@drawable/foto3"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
