@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.garda.R
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_detail.*
 
 /**
  * A simple [Fragment] subclass.

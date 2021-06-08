@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.garda.R
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_detail.*
 
 /**
  * A simple [Fragment] subclass.
@@ -33,7 +32,7 @@ class JournalFragment : Fragment() {
         //get data from firebasefirestore
         val db = FirebaseFirestore.getInstance()
 
-        val txt_about:TextView = view.findViewById(R.id.txt_about)
+        val txt_journal:TextView = view.findViewById(R.id.txt_journal)
 //        val txt_name: TextView = view.findViewById(R.id.txt_name)
 
         val docRef = db.collection("plants").document("chili")
@@ -43,7 +42,7 @@ class JournalFragment : Fragment() {
 
                     Log.d("exist", "DocumentSnapshot data: ${document.data}")
 
-                    txt_about.text = document.getString("journal")
+                    txt_journal.text = document.getString("journal")
 
                 } else {
                     Log.d("sorry there is no exist", "No Such Document")
