@@ -9,8 +9,7 @@ import com.example.garda.viewpager.SectionPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class DetailActivity : AppCompatActivity()
-{
+class DetailActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_PLANT = "extra_plant"
@@ -28,29 +27,6 @@ class DetailActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-//        val db = FirebaseFirestore.getInstance()
-//
-//        val txt_science: TextView = findViewById(R.id.txt_science)
-//        val txt_name: TextView = findViewById(R.id.txt_name)
-//
-//        val docRef = db.collection("plants").document("broccoli")
-//        docRef.get()
-//            .addOnSuccessListener{ document ->
-//                if(document != null) {
-//
-//                    Log.d("exist", "DocumentSnapshot data: ${document.data}")
-//
-//                    txt_science.text = document.getString("science")
-//
-//                } else {
-//                    Log.d("sorry there is no exist", "No Such Document")
-//                }
-//            }
-//            .addOnFailureListener {exception ->
-//                Log.d("sorry you get an error", "get failed with", exception)
-//            }
-
-
 
         val bundle = Bundle()
         val sectionsPagerAdapter = SectionPagerAdapter(this, bundle)
@@ -67,11 +43,6 @@ class DetailActivity : AppCompatActivity()
         actionBar?.setDisplayHomeAsUpEnabled(true)
         actionBar?.setDisplayShowHomeEnabled(true)
 
-//        val intent = Intent()
-//        var resultPlant = intent.getStringExtra("txt_name")
-//        txt_name.setText(resultPlant)
-//        var txt_science = intent.getStringExtra("txt_science")
-//        var imgPlants = intent.getIntExtra("imgPlants", 0)
 
     }
 }

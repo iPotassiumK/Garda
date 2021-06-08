@@ -8,6 +8,8 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.garda.CameraActivity
@@ -87,6 +89,7 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
             ) {
                 override fun populateViewHolder(viewHolder: PlantsViewHolder, model: PlantsEntity, position: Int) {
 
+
                     viewHolder.mview.txt_name.setText(model.name)
                     viewHolder.mview.txt_science.setText(model.science)
                     Picasso.get().load(model.imgPlants).into(viewHolder.mview.imgPlants)
@@ -105,7 +108,6 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
 
     // // View Holder Class
     class PlantsViewHolder(var mview : View) : RecyclerView.ViewHolder(mview) {
-
     }
         override fun onClick(v: View?) {
         when (v?.id) {
