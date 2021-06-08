@@ -17,7 +17,7 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.1073%2Fpnas.1308933111" />
+        android:text="@string/ref1" />
 
     <TextView
         android:id="@+id/txt_journal2"
@@ -30,7 +30,7 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.1371%2Fjournal.pone.0134663" />
+        android:text="@string/ref2" />
 
     <TextView
         android:id="@+id/txt_journal3"
@@ -43,7 +43,7 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.21273%2FHORTSCI.46.3.487" />
+        android:text="@string/ref3" />
 
     <TextView
         android:id="@+id/txt_journal4"
@@ -56,7 +56,7 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.1124%2Fpr.112.006163" />
+        android:text="@string/ref4" />
 
     <TextView
         android:id="@+id/txt_journal5"
@@ -69,7 +69,7 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.1073%2Fpnas.0802691105" />
+        android:text="@string/ref5" />
 
     <TextView
         android:id="@+id/txt_journal6"
@@ -82,7 +82,7 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.1007%2FBF00995932" />
+        android:text="@string/ref6" />
 
     <TextView
         android:id="@+id/txt_journal7"
@@ -95,7 +95,7 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.3390%2Fmolecules21070844" />
+        android:text="@string/ref7" />
 
     <TextView
         android:id="@+id/txt_journal8"
@@ -108,7 +108,7 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.1186%2Fs12889-017-4814-6" />
+        android:text="@string/ref8" />
 
     <TextView
         android:id="@+id/txt_journal9"
@@ -121,7 +121,7 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.1038%2F35086653" />
+        android:text="@string/ref9" />
 
     <TextView
         android:id="@+id/txt_journal10"
@@ -134,6 +134,6 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="https://doi.org/10.1111%2Fj.1750-3841.2010.01795.x" />
+        android:text="@string/ref10" />
 
 </FrameLayout>

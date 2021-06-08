@@ -12,8 +12,18 @@
     <string name="tab_1">About</string>
     <string name="tab_2">Instruction</string>
     <string name="tab_3">Harvest</string>
-    <string name="tab_4">Reference</string>
+    <string name="tab_4">Ref</string>
     <string name="hi">Hi, Planters!</string>
     <string name="find">Find Your Favorite Plant in Here</string>
+    <string name="ref1">https://doi.org/10.1073%2Fpnas.1308933111</string>
+    <string name="ref2">https://doi.org/10.1371%2Fjournal.pone.0134663</string>
+    <string name="ref3">https://doi.org/10.21273%2FHORTSCI.46.3.487</string>
+    <string name="ref4">https://doi.org/10.1124%2Fpr.112.006163</string>
+    <string name="ref5">https://doi.org/10.1073%2Fpnas.0802691105</string>
+    <string name="ref6">https://doi.org/10.1007%2FBF00995932</string>
+    <string name="ref7">https://doi.org/10.3390%2Fmolecules21070844</string>
+    <string name="ref8">https://doi.org/10.1186%2Fs12889-017-4814-6</string>
+    <string name="ref9">https://doi.org/10.1038%2F35086653</string>
+    <string name="ref10">https://doi.org/10.1111%2Fj.1750-3841.2010.01795.x</string>
 
 </resources>

@@ -18,7 +18,7 @@
             android:background="@color/grey"
             android:backgroundTint="@color/grey"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/Chilli"
+            app:srcCompat="@drawable/chilli"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
