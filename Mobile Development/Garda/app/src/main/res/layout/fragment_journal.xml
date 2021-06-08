@@ -7,7 +7,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/txt_journal"
+        android:id="@+id/txt_journal1"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -17,6 +17,123 @@
         android:fontFamily="@font/quicksand_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="fragment journal" />
+        android:text="https://doi.org/10.1073%2Fpnas.1308933111" />
+
+    <TextView
+        android:id="@+id/txt_journal2"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:fontFamily="@font/quicksand_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="https://doi.org/10.1371%2Fjournal.pone.0134663" />
+
+    <TextView
+        android:id="@+id/txt_journal3"
+        android:layout_marginTop="105dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:fontFamily="@font/quicksand_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="https://doi.org/10.21273%2FHORTSCI.46.3.487" />
+
+    <TextView
+        android:id="@+id/txt_journal4"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:fontFamily="@font/quicksand_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="https://doi.org/10.1124%2Fpr.112.006163" />
+
+    <TextView
+        android:id="@+id/txt_journal5"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:fontFamily="@font/quicksand_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="https://doi.org/10.1073%2Fpnas.0802691105" />
+
+    <TextView
+        android:id="@+id/txt_journal6"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:fontFamily="@font/quicksand_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="https://doi.org/10.1007%2FBF00995932" />
+
+    <TextView
+        android:id="@+id/txt_journal7"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:fontFamily="@font/quicksand_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="https://doi.org/10.3390%2Fmolecules21070844" />
+
+    <TextView
+        android:id="@+id/txt_journal8"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:fontFamily="@font/quicksand_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="https://doi.org/10.1186%2Fs12889-017-4814-6" />
+
+    <TextView
+        android:id="@+id/txt_journal9"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:fontFamily="@font/quicksand_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="https://doi.org/10.1038%2F35086653" />
+
+    <TextView
+        android:id="@+id/txt_journal10"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:fontFamily="@font/quicksand_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="https://doi.org/10.1111%2Fj.1750-3841.2010.01795.x" />
 
 </FrameLayout>

@@ -29,27 +29,27 @@ class JournalFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //get data from firebasefirestore
-        val db = FirebaseFirestore.getInstance()
-
-        val txt_journal:TextView = view.findViewById(R.id.txt_journal)
-//        val txt_name: TextView = view.findViewById(R.id.txt_name)
-
-        val docRef = db.collection("plants").document("chili")
-        docRef.get()
-            .addOnSuccessListener{ document ->
-                if(document != null) {
-
-                    Log.d("exist", "DocumentSnapshot data: ${document.data}")
-
-                    txt_journal.text = document.getString("journal")
-
-                } else {
-                    Log.d("sorry there is no exist", "No Such Document")
-                }
-            }
-            .addOnFailureListener {exception ->
-                Log.d("sorry you get an error", "get failed with", exception)
-            }
+//        //get data from firebasefirestore
+//        val db = FirebaseFirestore.getInstance()
+//
+//        val txt_journal:TextView = view.findViewById(R.id.txt_journal)
+////        val txt_name: TextView = view.findViewById(R.id.txt_name)
+//
+//        val docRef = db.collection("plants").document("chili")
+//        docRef.get()
+//            .addOnSuccessListener{ document ->
+//                if(document != null) {
+//
+//                    Log.d("exist", "DocumentSnapshot data: ${document.data}")
+//
+//                    txt_journal.text = document.getString("journal")
+//
+//                } else {
+//                    Log.d("sorry there is no exist", "No Such Document")
+//                }
+//            }
+//            .addOnFailureListener {exception ->
+//                Log.d("sorry you get an error", "get failed with", exception)
+//            }
     }
 }
