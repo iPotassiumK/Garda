@@ -1,20 +1,13 @@
 package com.example.garda
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.appcompat.app.ActionBar
 import androidx.viewpager2.widget.ViewPager2
-import com.example.garda.listsearch.SearchActivity
 import com.example.garda.viewpager.SectionPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity()
 {
@@ -26,7 +19,8 @@ class DetailActivity : AppCompatActivity()
         private val TAB_TITLES = intArrayOf(
             R.string.tab_1,
             R.string.tab_2,
-            R.string.tab_3
+            R.string.tab_3,
+            R.string.tab_4
         )
     }
 
