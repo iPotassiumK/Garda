@@ -27,10 +27,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var numPages = 0
     private var blogs: ArrayList<BlogEntity> = arrayListOf()
 
-    companion object {
-        private val TAG = MainActivity::class.java.simpleName
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -83,7 +79,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         slider.adapter = SliderAdapter(this, string)
         indicator.setViewPager(slider)
         val density = resources.displayMetrics.density
-        //Set circle indicator radius
         indicator.radius = 5 * density
         numPages = string.size
 
@@ -100,7 +95,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 Handler(Looper.getMainLooper()).post(update)
             }
         }, 5000, 5000)
-        // Pager listener over indicator
         indicator.setOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageSelected(position: Int) {
                 currentPage = position

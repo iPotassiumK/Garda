@@ -19,7 +19,8 @@
             app:srcCompat="@drawable/foto3"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:contentDescription="@string/img_blog"/>
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -34,7 +35,8 @@
             app:srcCompat="@drawable/card_detail"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="-70dp"
-            tools:layout_editor_absoluteY="154dp" />
+            tools:layout_editor_absoluteY="154dp"
+            android:contentDescription="@string/content"/>
 
         <TextView
             android:id="@+id/txt_name_title"

@@ -19,7 +19,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_search.*
-import kotlinx.android.synthetic.main.list_item_plants.*
 import kotlinx.android.synthetic.main.list_item_plants.view.*
 
 class SearchActivity : AppCompatActivity(), View.OnClickListener {
@@ -106,7 +105,6 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    // // View Holder Class
     class PlantsViewHolder(var mview : View) : RecyclerView.ViewHolder(mview) {
     }
         override fun onClick(v: View?) {

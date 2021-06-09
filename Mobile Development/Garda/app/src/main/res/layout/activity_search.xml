@@ -25,7 +25,8 @@
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            app:srcCompat="@drawable/ic_search" />
+            app:srcCompat="@drawable/ic_search"
+            android:contentDescription="@string/src"/>
 
         <EditText
             android:id="@+id/srcView"

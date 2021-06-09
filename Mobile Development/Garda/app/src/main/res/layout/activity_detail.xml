@@ -21,7 +21,8 @@
             app:srcCompat="@drawable/chilli"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
+            tools:layout_editor_absoluteY="0dp"
+            android:contentDescription="@string/img_main"/>
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -49,7 +50,8 @@
                     android:layout_marginStart="20dp"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="168dp"
-                    tools:ignore="MissingConstraints" />
+                    tools:ignore="MissingConstraints"
+                    android:contentDescription="@string/logo_plant"/>
 
                 <TextView
                     android:id="@+id/txt_name"
@@ -79,26 +81,39 @@
                     tools:layout_editor_absoluteX="76dp"
                     tools:layout_editor_absoluteY="193dp" />
 
-                <RelativeLayout
+                <Button
+                    android:id="@+id/btn_about"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="80dp">
+                    android:layout_height="60dp"
+                    android:layout_marginTop="100dp"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:text="About"
+                    android:textColor="@color/white" />
 
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tabs"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:tabIndicatorColor="#ACACAC"
-                        app:tabSelectedTextColor="#ACACAC"
-                        app:tabTextColor="@color/warna_g" />
+                <Button
+                    android:id="@+id/btn_instruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="170dp"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:text="Instruction"
+                    android:textColor="@color/white" />
 
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/view_pager"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tabs"/>
-                </RelativeLayout>
+                <Button
+                    android:id="@+id/btn_harvest"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="250dp"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:text="Harvest"
+                    android:textColor="@color/white" />
+
             </RelativeLayout>
         </FrameLayout>
 

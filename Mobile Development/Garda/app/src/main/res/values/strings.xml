@@ -25,5 +25,14 @@
     <string name="ref8">https://doi.org/10.1186%2Fs12889-017-4814-6</string>
     <string name="ref9">https://doi.org/10.1038%2F35086653</string>
     <string name="ref10">https://doi.org/10.1111%2Fj.1750-3841.2010.01795.x</string>
+    <string name="camera">image camera</string>
+    <string name="img_main">image plant main</string>
+    <string name="logo_plant">logo plant</string>
+    <string name="img_blog">image blog main</string>
+    <string name="content">content thee lang</string>
+    <string name="src">desc search view</string>
+    <string name="spls">logo splash screen</string>
+    <string name="crt">created by thee lang</string>
+    <string name="slider">slider image</string>
 
 </resources>

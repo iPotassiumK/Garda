@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Garda">
-        <activity android:name=".newdetail.Detail1Activity"></activity>
+        <activity android:name=".detail.InstructionActivity"></activity>
+        <activity android:name=".detail.HarvestActivity" />
+        <activity android:name=".detail.AboutActivity" />
         <activity android:name=".detailblog.DetailBlogActivity" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".listsearch.SearchActivity" />

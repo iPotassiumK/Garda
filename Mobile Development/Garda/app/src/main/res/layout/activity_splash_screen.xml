@@ -31,7 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/lottie"
-        android:background="@drawable/firstlogo"/>
+        android:background="@drawable/firstlogo"
+        android:contentDescription="@string/spls"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -40,7 +41,8 @@
         android:background="@drawable/createby"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/crt"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
