@@ -18,7 +18,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 
-class DetailActivity : AppCompatActivity() {
+interface OnDataPass {
+    fun onDataPass(txt_name: String)
+}
+
+class DetailActivity : AppCompatActivity(), OnDataPass {
 
     companion object {
 
@@ -131,4 +135,7 @@ class DetailActivity : AppCompatActivity() {
             }
     }
 
+    override fun onDataPass(data: String) {
+        Log.d("LOG","your plant is " + txt_name)
+    }
 }
