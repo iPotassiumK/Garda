@@ -8,8 +8,6 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.garda.CameraActivity
@@ -20,6 +18,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.list_item_plants.*
 import kotlinx.android.synthetic.main.list_item_plants.view.*
 
@@ -96,9 +95,10 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
 
 
                     viewHolder.mview.setOnClickListener{
-                        val moveWithDataIntent = Intent(this@SearchActivity, DetailActivity::class.java)
-//                        moveWithDataIntent.putExtra(DetailActivity.EXTRA_PLANT, txt_name)
-                        startActivity(moveWithDataIntent)
+                        val model_name = rvPlants.txt_name.text
+                        val intent = Intent(this@SearchActivity, DetailActivity::class.java)
+                        intent.putExtra("model_name", model_name)
+                        startActivity(intent)
                     }
                 }
             }

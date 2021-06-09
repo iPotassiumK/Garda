@@ -6,10 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.example.garda.R
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_detail.*
 
 /**
  * A simple [Fragment] subclass.
@@ -34,8 +35,11 @@ class AboutFragment : Fragment() {
         val db = FirebaseFirestore.getInstance()
 
         val txt_about:TextView = view.findViewById(R.id.txt_about)
+        val txt_names = "message"
 
-        val docRef = db.collection("plants").document("chili")
+
+        val docRef = db.collection("plants").document("${txt_names}")
+
         docRef.get()
             .addOnSuccessListener{ document ->
                 if(document != null) {
