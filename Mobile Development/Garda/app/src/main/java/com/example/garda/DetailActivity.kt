@@ -8,19 +8,15 @@ import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.appcompat.app.ActionBar
 import androidx.viewpager2.widget.ViewPager2
-import com.example.garda.detailfragment.AboutFragment
 import com.example.garda.viewpager.SectionPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_detail.*
 
-interface OnDataPass {
-    fun onDataPass(txt_name: String)
-}
 
-class DetailActivity : AppCompatActivity(), OnDataPass {
+
+class DetailActivity : AppCompatActivity() {
 
     companion object {
 
@@ -39,11 +35,7 @@ class DetailActivity : AppCompatActivity(), OnDataPass {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val myFragment = AboutFragment()
-
         val bundle = Bundle()
-        bundle.putString("message", txt_name.text.toString())
-        myFragment.arguments = bundle
 
         val sectionsPagerAdapter = SectionPagerAdapter(this, bundle)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
@@ -134,7 +126,4 @@ class DetailActivity : AppCompatActivity(), OnDataPass {
             }
     }
 
-    override fun onDataPass(data: String) {
-        Log.d("LOG","your plant is " + txt_name)
-    }
 }

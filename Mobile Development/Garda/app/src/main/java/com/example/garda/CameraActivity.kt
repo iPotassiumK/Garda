@@ -80,11 +80,6 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener {
 
                 runOnUiThread {
                     Toast.makeText(this, resultPlant, Toast.LENGTH_SHORT).show()
-//                    Toast.makeText(this, "chili", Toast.LENGTH_SHORT).show()
-
-//                    val moveWithDataIntent = Intent(this, DetailActivity::class.java)
-//                    moveWithDataIntent.putExtra(DetailActivity.EXTRA_PLANT, resultPlant)
-//                    startActivity(moveWithDataIntent)
 
                     val resultPlant = resultPlant.toString()
                     val intent = Intent(this, DetailActivity::class.java)

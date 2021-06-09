@@ -9,24 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.garda.OnDataPass
 import com.example.garda.R
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_detail.*
 
-/**
- * A simple [Fragment] subclass.
- */
-
-
-
 class AboutFragment : Fragment() {
-    lateinit var dataPasser: OnDataPass
+//    lateinit var dataPasser: OnDataPass
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        dataPasser = context as OnDataPass
-    }
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        dataPasser = context as OnDataPass
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,9 +29,9 @@ class AboutFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
-    fun passData(txt_name: String){
-        dataPasser.onDataPass(txt_name)
-    }
+//    fun passData(txt_name: String){
+//        dataPasser.onDataPass(txt_name)
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -47,7 +40,8 @@ class AboutFragment : Fragment() {
         val db = FirebaseFirestore.getInstance()
 
         val txt_about:TextView = view.findViewById(R.id.txt_about)
-        val txt_names = dataPasser.onDataPass(txt_name.toString())
+        var txt_names = ""
+//        val txt_names = dataPasser.onDataPass(txt_name.toString())
 
         val docRef = db.collection("plants").document("${txt_names}")
 
