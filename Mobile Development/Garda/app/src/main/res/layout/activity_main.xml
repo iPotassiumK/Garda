@@ -45,7 +45,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/txt_awal1" />
 
-            <androidx.viewpager.widget.ViewPager
+            <ImageView
                 android:id="@+id/slider"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
