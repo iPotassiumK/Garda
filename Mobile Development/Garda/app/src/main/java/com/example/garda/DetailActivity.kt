@@ -9,11 +9,9 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.ActionBar
 import androidx.viewpager2.widget.ViewPager2
 import com.example.garda.detailfragment.AboutFragment
-import com.example.garda.listsearch.PlantsEntity
 import com.example.garda.viewpager.SectionPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -31,6 +29,7 @@ class DetailActivity : AppCompatActivity() {
             R.string.tab_4
         )
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
