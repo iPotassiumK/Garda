@@ -3,18 +3,14 @@ package com.example.garda
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager.widget.ViewPager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.garda.detailblog.BlogAdapter
 import com.example.garda.detailblog.BlogEntity
 import com.example.garda.detailblog.DataDummyBlog
 import com.example.garda.listsearch.SearchActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 
@@ -23,8 +19,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var rvBlog: RecyclerView
     private lateinit var ic_camera : ImageButton
     private lateinit var ic_search :ImageButton
-    private var currentPage = 0
-    private var numPages = 0
     private var blogs: ArrayList<BlogEntity> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,8 +37,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.drawable.foto3
         )
 
-
-        createSlider(assets)
 
         rvBlog = findViewById(R.id.rv_main)
         rvBlog.setHasFixedSize(true)
@@ -74,35 +66,4 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    private fun createSlider(string: List<Int>) {
-
-        slider.adapter = SliderAdapter(this, string)
-        indicator.setViewPager(slider)
-        val density = resources.displayMetrics.density
-        indicator.radius = 5 * density
-        numPages = string.size
-
-
-        val update = Runnable {
-            if (currentPage === numPages) {
-                currentPage = 0
-            }
-            slider.setCurrentItem(currentPage++, true)
-        }
-        val swipeTimer = Timer()
-        swipeTimer.schedule(object : TimerTask() {
-            override fun run() {
-                Handler(Looper.getMainLooper()).post(update)
-            }
-        }, 5000, 5000)
-        indicator.setOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-            override fun onPageSelected(position: Int) {
-                currentPage = position
-            }
-
-            override fun onPageScrolled(pos: Int, arg1: Float, arg2: Int) {}
-            override fun onPageScrollStateChanged(pos: Int) {}
-        })
-
-    }
 }
